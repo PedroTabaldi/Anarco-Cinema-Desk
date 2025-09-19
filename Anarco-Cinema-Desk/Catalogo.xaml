@@ -9,7 +9,7 @@
       Title="Catalogo">
 
     <Grid Background="White">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="400,274,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="bt_catalogo_voltar" Content="Button" HorizontalAlignment="Left" Margin="144,108,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Page>

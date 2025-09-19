@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Anarco-Cinema-Desk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38cbbc83a2b275505862488a3330194e031178e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Anarco-Cinema-Desk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Anarco-Cinema-Desk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

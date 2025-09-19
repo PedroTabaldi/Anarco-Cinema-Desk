@@ -38,7 +38,7 @@ namespace Anarco_Cinema_Desk
 
         private void bt_filme_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Catalogo());
+            NavigationService.Navigate(new Login());
         }
     }
 }

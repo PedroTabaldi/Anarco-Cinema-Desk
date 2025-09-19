@@ -85,7 +85,7 @@ namespace Anarco_Cinema_Desk {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Anarco-Cinema-Desk;V1.0.0.0;component/logar.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Anarco-Cinema-Desk;component/logar.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Logar.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
