@@ -8,23 +8,52 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Logar">
 
-    <Grid Background="White">
-        <Rectangle x:Name="nav_inicio" HorizontalAlignment="Center" Height="79" Margin="0,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="1280" Fill="Gray">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="White" Offset="0"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+
+        <Button x:Name="bt_logar" Content="Logar Filme" HorizontalAlignment="Left" Margin="188,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="bt_filme" Content="Ver filmes" HorizontalAlignment="Left" Margin="847,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_filme_Click" FontSize="32">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="63" Margin="317,108,0,0" FontFamily="Georgia" Foreground="Black" Height="104" Width="670">
+            <Label.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="40" ShadowDepth="8" Direction="320" Opacity="0.9"/>
+            </Label.Effect>
+        </Label>
+        <Rectangle HorizontalAlignment="Center" Height="57" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+            </Rectangle.Effect>
         </Rectangle>
-
-        <Button x:Name="bt_logar" Content="Logar Filme" HorizontalAlignment="Left" Margin="106,585,0,0" VerticalAlignment="Top"  Height="74" Width="152" Background="#FFD4D4D4" FontFamily="Georgia" Click="bt_logar_Click"/>
-        <Button x:Name="bt_filme" Content="Ver filmes" HorizontalAlignment="Left" Margin="1032,585,0,0" VerticalAlignment="Top" Height="74" Width="152" Background="#FFD4D4D4" FontFamily="Georgia" Click="bt_filme_Click"/>
-        <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="446,49,0,0" FontFamily="Georgia"/>
-        <Rectangle HorizontalAlignment="Center" Height="36" Margin="0,-1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1280" Fill="#FF1D1D1D"/>
-
+        <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="540,32,516,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top"/>
+        <Label Content="Acompanhe os Filmes que você gosta!" HorizontalAlignment="Center" Margin="0,274,0,0" VerticalAlignment="Top" FontFamily="Georgia" FontSize="20"/>
+        <Label Content="Salve Filmes para ver futuramente!" HorizontalAlignment="Left" Margin="468,307,0,0" VerticalAlignment="Top" FontFamily="Georgia" FontSize="20"/>
+        <Label Content="Mostre a seu amigos seu gosto!" HorizontalAlignment="Left" Margin="468,340,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Georgia"/>
 
     </Grid>
 </Page>

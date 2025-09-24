@@ -9,24 +9,14 @@
       Title="Login">
 
     <Grid Background="White">
-        <Rectangle x:Name="nav_inicio" HorizontalAlignment="Left" Height="79" Margin="0,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="1280" Fill="Gray">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
 
         <Rectangle HorizontalAlignment="Left" Height="36" Margin="0,-1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1280" Fill="#FF1D1D1D"/>
-        <Label x:Name="tx_login" Content="{}{Login}" HorizontalAlignment="Center" Margin="0,136,0,0" VerticalAlignment="Top" Height="82" Width="252" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="2147483624" FontFamily="Georgia" FontSize="63"/>
-        <TextBox x:Name="cx_email" HorizontalAlignment="Left" Height="33" Margin="94,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="622" TextChanged="TextBox_TextChanged" BorderBrush="Gray"/>
-        <Image x:Name="img_voltar" Margin="882,190,53,190" Source="/img/voltar.png" Stretch="Fill"/>
-        <Label x:Name="tx_email" Content="email" HorizontalAlignment="Left" Margin="94,240,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia"/>
-        <TextBox x:Name="cx_senha" HorizontalAlignment="Left" Height="33" Margin="94,504,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="622" TextChanged="TextBox_TextChanged" BorderBrush="Gray"/>
-        <Label x:Name="tx_senha" Content="senha" HorizontalAlignment="Left" Margin="94,434,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia"/>
+        <Label x:Name="tx_login" Content="{}{Login}" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" Height="82" Width="252" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="2147483624" FontFamily="Georgia" FontSize="63"/>
+        <TextBox x:Name="cx_email" HorizontalAlignment="Left" Height="39" Margin="94,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="704" TextChanged="TextBox_TextChanged" BorderBrush="Gray"/>
+        <Label x:Name="tx_email" Content="email" HorizontalAlignment="Left" Margin="94,184,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="77" Width="144"/>
+        <TextBox x:Name="cx_senha" HorizontalAlignment="Left" Height="39" Margin="94,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="704" TextChanged="TextBox_TextChanged" BorderBrush="Gray"/>
+        <Label x:Name="tx_senha" Content="senha" HorizontalAlignment="Left" Margin="94,415,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="76" Width="152"/>
+        <Image HorizontalAlignment="Left" Height="348" Margin="905,222,0,0" VerticalAlignment="Top" Width="338" Source="/icone.png"/>
 
     </Grid>
 </Page>

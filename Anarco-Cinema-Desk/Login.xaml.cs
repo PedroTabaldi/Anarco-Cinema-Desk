@@ -30,19 +30,7 @@ namespace Anarco_Cinema_Desk
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //using (var connection = new SqliteConnection(connectionString))
-            //{
-            //    connection.Open();
-
-            //    string createTable = @"
-            //        CREATE TABLE IF NOT EXISTS Pessoas (
-            //         Id INTEGER PRIMARY KEY,
-            //         Nome TEXT
-            //         );";
-            //    var cmd = new SQLiteCommand(createTable, connection);
-            //    cmd.ExecuteNonQuery();
-
-            //}
+            
         }
     }
 }
