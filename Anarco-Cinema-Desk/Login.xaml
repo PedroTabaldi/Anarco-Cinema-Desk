@@ -8,15 +8,105 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Login">
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFCACACA" Offset="1"/>
+                <GradientStop Color="White" Offset="0"/>
+            </RadialGradientBrush>
+        </Grid.Background>
 
-        <Rectangle HorizontalAlignment="Left" Height="36" Margin="0,-1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1280" Fill="#FF1D1D1D"/>
-        <Label x:Name="tx_login" Content="{}{Login}" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" Height="82" Width="252" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="2147483624" FontFamily="Georgia" FontSize="63"/>
-        <TextBox x:Name="cx_email" HorizontalAlignment="Left" Height="39" Margin="94,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="704" TextChanged="TextBox_TextChanged" BorderBrush="Gray"/>
-        <Label x:Name="tx_email" Content="email" HorizontalAlignment="Left" Margin="94,184,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="77" Width="144"/>
-        <TextBox x:Name="cx_senha" HorizontalAlignment="Left" Height="39" Margin="94,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="704" TextChanged="TextBox_TextChanged" BorderBrush="Gray"/>
-        <Label x:Name="tx_senha" Content="senha" HorizontalAlignment="Left" Margin="94,415,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="76" Width="152"/>
-        <Image HorizontalAlignment="Left" Height="348" Margin="905,222,0,0" VerticalAlignment="Top" Width="338" Source="/icone.png"/>
+        <Image HorizontalAlignment="Center" Height="760" VerticalAlignment="Top" Width="1282" Source="/filme.jpg" Opacity="0.9"/>
+
+        <TextBox x:Name="cx_email" HorizontalAlignment="Left" Height="39" Margin="94,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="704" TextChanged="TextBox_TextChanged" BorderBrush="Gray" VerticalContentAlignment="Center" Padding="16,0,0,0" FontSize="20" FontFamily="Georgia">
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                <Border CornerRadius="12" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label x:Name="tx_email" Content="Email" HorizontalAlignment="Left" Margin="94,184,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="77" Width="144"/>
+        <TextBox x:Name="cx_senha" HorizontalAlignment="Left" Height="39" Margin="94,476,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="704" TextChanged="TextBox_TextChanged" BorderBrush="Gray" FontSize="20" FontFamily="Georgia" VerticalContentAlignment="Center" Padding="10,0,0,0">
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                <Border CornerRadius="12" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label x:Name="tx_senha" Content="Senha" HorizontalAlignment="Left" Margin="94,393,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="76" Width="152"/>
+        <Rectangle x:Name="rt_anarco" HorizontalAlignment="Center" Height="57" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar">
+            <Rectangle.Style>
+                <Style TargetType="{x:Type Rectangle}">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="40" Duration="0:0:0.3"/>
+                                        <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="#FF3A3A3A" Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="25" Duration="0:0:0.3"/>
+                                        <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="#FF1D1D1D" Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Rectangle.Style>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="540,32,516,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top"/>
+        <Image x:Name="img_logo" HorizontalAlignment="Left" Height="39" Margin="42,32,0,0" VerticalAlignment="Top" Width="39" Source="/icone.png" Stretch="UniformToFill">
+            <Image.Clip>
+                <RectangleGeometry Rect="0,0,39,39" RadiusX="16" RadiusY="16"/>
+            </Image.Clip>
+        </Image>
+        <Button x:Name="bt_entrar" Content="Entrar" HorizontalAlignment="Left" Margin="322,560,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Page>
