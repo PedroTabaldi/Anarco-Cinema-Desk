@@ -16,9 +16,9 @@
             </RadialGradientBrush>
         </Grid.Background>
 
-        <Button x:Name="bt_logar" Content="Logar Filme" HorizontalAlignment="Left" Margin="188,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32">
+        <Button x:Name="bt_logar" Content="Logar Filme" HorizontalAlignment="Left" Margin="188,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border.Effect>
                             <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
@@ -33,9 +33,9 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="bt_filme" Content="Ver filmes" HorizontalAlignment="Left" Margin="847,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_filme_Click" FontSize="32">
+        <Button x:Name="bt_filme" Content="Ver filmes" HorizontalAlignment="Left" Margin="847,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_filme_Click" FontSize="32" Opacity="0.9">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Border.Effect>
                             <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
@@ -50,14 +50,14 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="63" Margin="317,108,0,0" FontFamily="Georgia" Foreground="Black" Height="104" Width="670">
+        <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="63" Margin="317,108,0,0" FontFamily="Georgia" Foreground="Black" Height="104" Width="670" Opacity="0.9">
             <Label.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="40" ShadowDepth="8" Direction="320" Opacity="0.9"/>
             </Label.Effect>
         </Label>
         <Rectangle x:Name="rt_anarco" HorizontalAlignment="Center" Height="57" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar">
             <Rectangle.Style>
-                <Style TargetType="Rectangle">
+                <Style TargetType="{x:Type Rectangle}">
                     <Setter Property="Effect">
                         <Setter.Value>
                             <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>

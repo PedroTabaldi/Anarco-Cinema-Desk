@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="filme.jpg" />
     <None Remove="icone.png" />
+    <None Remove="Mojica.jpg" />
     <None Remove="morangos-silvestres.jpg" />
   </ItemGroup>
 
@@ -23,6 +24,7 @@
   <ItemGroup>
     <Resource Include="filme.jpg" />
     <Resource Include="icone.png" />
+    <Resource Include="Mojica.jpg" />
     <Resource Include="morangos-silvestres.jpg" />
   </ItemGroup>
 
