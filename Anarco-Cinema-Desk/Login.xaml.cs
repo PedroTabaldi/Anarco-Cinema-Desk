@@ -93,6 +93,12 @@ namespace Anarco_Cinema_Desk
             }
         }
 
+        private void bt_cadastrar_Click(object sender, RoutedEventArgs e)
+        {
+            // Navega para a página de cadastro sem verificar email ou senha
+            NavigationService.Navigate(new Cadastro());
+        }
+
         private void anarco_(object sender, MouseButtonEventArgs e)
         {
 
@@ -101,6 +107,11 @@ namespace Anarco_Cinema_Desk
         private void anarco_voltar(object sender, MouseButtonEventArgs e)
         {
             NavigationService.Navigate(new Logar());
+        }
+
+        private void bt_cadastrar_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Cadastro());
         }
     }
 }

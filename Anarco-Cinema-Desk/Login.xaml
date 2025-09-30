@@ -16,7 +16,7 @@
             </RadialGradientBrush>
         </Grid.Background>
 
-        <Image HorizontalAlignment="Center" Height="760" VerticalAlignment="Top" Width="1282" Source="/filme.jpg" Opacity="0.9"/>
+        <Image HorizontalAlignment="Center" Height="760" VerticalAlignment="Top" Width="1282" Source="/filme.jpg" Opacity="0.9" Margin="0,-1,0,0"/>
 
         <TextBox x:Name="cx_email" HorizontalAlignment="Left" Height="39" Margin="94,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="546" TextChanged="TextBox_TextChanged" BorderBrush="Gray" VerticalContentAlignment="Center" Padding="16,0,0,0" FontSize="20" FontFamily="Georgia" Opacity="0.9">
             <TextBox.Style>
@@ -36,7 +36,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <Label x:Name="tx_email" Content="Email" HorizontalAlignment="Left" Margin="94,184,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="77" Width="144" Opacity="0.75"/>
+        <Label x:Name="tx_email" Content="Email" HorizontalAlignment="Left" Margin="127,180,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="77" Width="144" Opacity="0.75"/>
         <TextBox x:Name="cx_senha" HorizontalAlignment="Left" Height="39" Margin="94,456,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="546" TextChanged="TextBox_TextChanged" BorderBrush="Gray" FontSize="20" FontFamily="Georgia" VerticalContentAlignment="Center" Padding="10,0,0,0" Background="White" Opacity="0.9">
             <TextBox.Style>
                 <Style TargetType="{x:Type TextBox}">
@@ -55,7 +55,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <Label x:Name="tx_senha" Content="Senha" HorizontalAlignment="Left" Margin="94,383,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="76" Width="152" Opacity="0.75"/>
+        <Label x:Name="tx_senha" Content="Senha" HorizontalAlignment="Left" Margin="127,375,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Georgia" Height="76" Width="152" Opacity="0.75"/>
         <Rectangle x:Name="rt_anarco" HorizontalAlignment="Center" Height="57" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar">
             <Rectangle.Style>
                 <Style TargetType="{x:Type Rectangle}">
@@ -96,7 +96,24 @@
                 <RectangleGeometry Rect="0,0,39,39" RadiusX="16" RadiusY="16"/>
             </Image.Clip>
         </Image>
-        <Button x:Name="bt_entrar" Content="Entrar" HorizontalAlignment="Left" Margin="322,550,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
+        <Button x:Name="bt_entrar" Content="Entrar" HorizontalAlignment="Left" Margin="127,550,0,0" VerticalAlignment="Top" Height="98" Width="197" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" BlurRadius="45" ShadowDepth="15.6" Direction="320" Opacity="1"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="Black"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="bt_cadastrar" Content="Cadastrar" HorizontalAlignment="Left" Height="98" Margin="412,550,0,0" VerticalAlignment="Top" Width="198" Background="White" Foreground="#FF1A1A1A" FontSize="32" FontFamily="Georgia" Click="bt_cadastrar_Click_1">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">

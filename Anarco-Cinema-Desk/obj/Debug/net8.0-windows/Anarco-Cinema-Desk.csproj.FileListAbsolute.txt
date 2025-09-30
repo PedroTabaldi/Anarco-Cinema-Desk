@@ -45,3 +45,5 @@ C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\An
 C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Anarco-C.3707FE73.Up2Date
+C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Cadastro.g.cs
+C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Cadastro.baml
