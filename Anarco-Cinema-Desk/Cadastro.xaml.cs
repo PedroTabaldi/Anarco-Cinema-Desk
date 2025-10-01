@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace Anarco_Cinema_Desk
 {
@@ -37,7 +38,33 @@ namespace Anarco_Cinema_Desk
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            // Supondo que cx_email_re e cx_senha_re são TextBox no XAML
+            string email = cx_email_re.Text;
+            string senha = cx_senha_re.Text;
 
+            // Exemplo simples de inserção no banco de dados usando MySql.Data
+            // Ajuste a string de conexão conforme necessário
+            string connectionString = "Server=localhost;Database=login;Uid=root;Pwd=root;";
+            string query = "INSERT INTO usuarios (Email, Senha) VALUES (@Email, @Senha)";
+
+            try
+            {
+                using (var connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (var command = new MySql.Data.MySqlClient.MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Senha", senha);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("E-mail e senha cadastrados com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex.Message);
+            }
         }
     }
 }
