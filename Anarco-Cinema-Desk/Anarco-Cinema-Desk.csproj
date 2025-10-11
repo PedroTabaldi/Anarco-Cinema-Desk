@@ -14,6 +14,7 @@
     <None Remove="icone.png" />
     <None Remove="Mojica.jpg" />
     <None Remove="morangos-silvestres.jpg" />
+    <None Remove="setimo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +27,7 @@
     <Resource Include="icone.png" />
     <Resource Include="Mojica.jpg" />
     <Resource Include="morangos-silvestres.jpg" />
+    <Resource Include="setimo.jpg" />
   </ItemGroup>
 
 </Project>

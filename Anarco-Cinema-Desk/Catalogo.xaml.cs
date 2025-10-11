@@ -23,6 +23,13 @@ namespace Anarco_Cinema_Desk
         public Catalogo()
         {
             InitializeComponent();
+
+            ImageBrush brush = new ImageBrush();
+            brush.ImageSource = new BitmapImage(new Uri("C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\img\\poster\\setimo.jpg", UriKind.Absolute));
+            brush.Stretch = Stretch.UniformToFill;
+            this.Background = brush;
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,5 +42,12 @@ namespace Anarco_Cinema_Desk
                 NavigationService.Navigate(new Logar());
             }
         }
+
+        private void anarco_voltar(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+
     }
 }
