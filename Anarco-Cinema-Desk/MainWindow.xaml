@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Anarco_Cinema_Desk"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="MainWindow" Height="900" Width="1680">
     <Grid>
         <Frame Name ="mainframe" NavigationUIVisibility="Hidden" Source="Logar.xaml"/>
     </Grid>

@@ -1,0 +1,94 @@
+﻿<Page x:Class="Anarco_Cinema_Desk.Teste"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Anarco_Cinema_Desk"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1600"
+      Title="Teste">
+
+    <Grid Background="White" HorizontalAlignment="Right" Width="1600" Height="900" VerticalAlignment="Center">
+        <Button x:Name="bt_logar_te" Content="Logar Filme" HorizontalAlignment="Left" Margin="110,625,0,0" VerticalAlignment="Top" Height="128" Width="306" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="bt_filme_te" Content="Ver filmes" HorizontalAlignment="Left" Margin="1184,625,0,0" VerticalAlignment="Top" Height="128" Width="306" Background="White" FontFamily="Georgia" Click="bt_filme_Click" FontSize="32" Opacity="0.9">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="63" Margin="0,124,0,0" FontFamily="Georgia" Foreground="Black" Height="136" Width="826" Opacity="0.9" HorizontalContentAlignment="Center">
+            <Label.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="40" ShadowDepth="8" Direction="320" Opacity="0.9"/>
+            </Label.Effect>
+        </Label>
+        <Rectangle x:Name="rt_anarco_te" Height="74" Margin="0,0,0,803" Stroke="Black" VerticalAlignment="Bottom" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar" HorizontalAlignment="Center" Width="1580">
+            <Rectangle.Style>
+                <Style TargetType="{x:Type Rectangle}">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="40" Duration="0:0:0.3"/>
+                                        <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="#FF3A3A3A" Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="25" Duration="0:0:0.3"/>
+                                        <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="#FF1D1D1D" Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Rectangle.Style>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="tx_Anarco_te" Content="{}{Anarco-Cinema}" Margin="662,35,662,0" Background="Transparent" Foreground="#FFD4D4D4" Height="51" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+        <Label Content="Acompanhe os Filmes que você gosta!&#xD;&#xA;&#xD;&#xA;Salve Filmes para ver futuramente!&#xD;&#xA;&#xD;&#xA;Mostre a seu amigos seu gosto!" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Top" FontFamily="Georgia" FontSize="20" Height="132" Width="366"/>
+        <Image x:Name="img_logo_te" HorizontalAlignment="Left" Height="51" Margin="47,35,0,0" VerticalAlignment="Top" Width="48" Source="/icone.png" Stretch="UniformToFill">
+            <Image.Clip>
+                <RectangleGeometry Rect="0,0,39,39" RadiusX="16" RadiusY="16"/>
+            </Image.Clip>
+        </Image>
+
+    </Grid>
+</Page>

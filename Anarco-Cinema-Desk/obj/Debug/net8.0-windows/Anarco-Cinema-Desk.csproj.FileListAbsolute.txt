@@ -47,3 +47,5 @@ C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\An
 C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Anarco-C.3707FE73.Up2Date
 C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Cadastro.g.cs
 C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Cadastro.baml
+C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Teste.g.cs
+C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\obj\Debug\net8.0-windows\Teste.baml

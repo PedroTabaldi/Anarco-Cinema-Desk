@@ -5,18 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Anarco_Cinema_Desk"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280"
+      d:DesignHeight="900" d:DesignWidth="1600"
       Title="Logar">
 
     <Grid>
         <Grid.Background>
-            <RadialGradientBrush>
-                <GradientStop Color="White" Offset="0"/>
-                <GradientStop Color="#FFCACACA" Offset="1"/>
-            </RadialGradientBrush>
+            <ImageBrush ImageSource="/fundo.png" />
         </Grid.Background>
 
-        <Button x:Name="bt_logar" Content="Logar Filme" HorizontalAlignment="Left" Margin="188,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
+        <Button x:Name="bt_logar" Content="Logar Filme" HorizontalAlignment="Left" Margin="334,692,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
@@ -33,7 +30,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="bt_filme" Content="Ver filmes" HorizontalAlignment="Left" Margin="847,484,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_filme_Click" FontSize="32" Opacity="0.9">
+        <Button x:Name="bt_filme" Content="Ver filmes" HorizontalAlignment="Left" Margin="993,692,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_filme_Click" FontSize="32" Opacity="0.9">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
@@ -50,7 +47,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="63" Margin="317,108,0,0" FontFamily="Georgia" Foreground="Black" Height="104" Width="670" Opacity="0.9">
+        <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="63" Margin="0,124,0,0" FontFamily="Georgia" Foreground="White" Height="104" Width="670" Opacity="0.9">
             <Label.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="40" ShadowDepth="8" Direction="320" Opacity="0.9"/>
             </Label.Effect>
@@ -89,11 +86,11 @@
                 <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="540,32,516,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top"/>
-        <Label Content="Acompanhe os Filmes que você gosta!" HorizontalAlignment="Center" Margin="0,274,0,0" VerticalAlignment="Top" FontFamily="Georgia" FontSize="20"/>
-        <Label Content="Salve Filmes para ver futuramente!" HorizontalAlignment="Left" Margin="468,307,0,0" VerticalAlignment="Top" FontFamily="Georgia" FontSize="20"/>
-        <Label Content="Mostre a seu amigos seu gosto!" HorizontalAlignment="Left" Margin="468,340,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Georgia"/>
-        <Image x:Name="img_logo" HorizontalAlignment="Left" Height="39" Margin="42,32,0,0" VerticalAlignment="Top" Width="39" Source="/icone.png" Stretch="UniformToFill">
+        <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="0,32,0,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label Content="Acompanhe os Filmes que você gosta!" HorizontalAlignment="Center" Margin="0,274,0,0" VerticalAlignment="Top" FontFamily="Georgia" FontSize="20" Foreground="White"/>
+        <Label Content="Salve Filmes para ver futuramente!" HorizontalAlignment="Left" Margin="628,313,0,0" VerticalAlignment="Top" FontFamily="Georgia" FontSize="20" Foreground="White"/>
+        <Label Content="Mostre a seu amigos seu gosto!" HorizontalAlignment="Left" Margin="628,346,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Georgia" Foreground="White"/>
+        <Image x:Name="img_logo" HorizontalAlignment="Left" Height="39" Margin="195,32,0,0" VerticalAlignment="Top" Width="39" Source="/icone.png" Stretch="Fill">
             <Image.Clip>
                 <RectangleGeometry Rect="0,0,39,39" RadiusX="16" RadiusY="16"/>
             </Image.Clip>
