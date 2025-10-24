@@ -15,7 +15,9 @@
     <None Remove="icone.png" />
     <None Remove="Mojica.jpg" />
     <None Remove="morangos-silvestres.jpg" />
+    <None Remove="same old.jpg" />
     <None Remove="setimo.jpg" />
+    <None Remove="seventh_seal.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +31,9 @@
     <Resource Include="icone.png" />
     <Resource Include="Mojica.jpg" />
     <Resource Include="morangos-silvestres.jpg" />
+    <Resource Include="same old.jpg" />
     <Resource Include="setimo.jpg" />
+    <Resource Include="seventh_seal.jpg" />
   </ItemGroup>
 
 </Project>

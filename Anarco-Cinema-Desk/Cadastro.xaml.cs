@@ -60,6 +60,7 @@ namespace Anarco_Cinema_Desk
                     }
                 }
                 MessageBox.Show("E-mail e senha cadastrados com sucesso!");
+                NavigationService.Navigate(new Login());
             }
             catch (Exception ex)
             {
