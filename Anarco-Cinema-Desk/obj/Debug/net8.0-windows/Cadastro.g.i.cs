@@ -133,7 +133,7 @@ namespace Anarco_Cinema_Desk {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Anarco-Cinema-Desk;V1.0.0.0;component/cadastro.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Anarco-Cinema-Desk;component/cadastro.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Cadastro.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
