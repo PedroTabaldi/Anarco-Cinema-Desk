@@ -5,8 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Anarco_Cinema_Desk"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280"
+      d:DesignHeight="900" d:DesignWidth="1600"
       Title="Catalogo">
+
+    <!--
+    PSEUDOCÓDIGO (plano detalhado):
+    - Objetivo: fazer com que o botão "Ocultar" torne a Grid 'gr_setimo' invisível ao ser clicado.
+    - Estratégia: usar triggers XAML para não precisar alterar code-behind.
+    - Passos:
+      1. Identificar a Grid alvo: x:Name="gr_setimo".
+      2. Substituir o botão atual por um que contenha um Button.Triggers.
+      3. No EventTrigger para Button.Click, iniciar um BeginStoryboard.
+      4. Dentro do Storyboard usar ObjectAnimationUsingKeyFrames para animar a propriedade Visibility da Grid.
+      5. Definir um DiscreteObjectKeyFrame com Value = Collapsed (ou Hidden) em KeyTime 0:0:0.
+      6. Ao clicar, a Grid ficará com Visibility=Collapsed, efetivamente ocultando-a da interface.
+    -->
 
     <Grid>
         <Grid.Background>
@@ -14,7 +27,61 @@
                 <GradientStop Color="#FFCACACA" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle x:Name="rt_anarco_ca" HorizontalAlignment="Left" Height="57" Margin="20,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar">
+        <Label Content="Bem Vindo Novamente" HorizontalAlignment="Center" Height="96" Margin="0,144,0,0" VerticalAlignment="Top" Width="386" FontFamily="Georgia" FontSize="36"/>
+        <Button x:Name="bt_setimo" Content="Ver mais sobre..." HorizontalAlignment="Left" Height="204" Margin="58,253,0,0" VerticalAlignment="Top" Width="153" Click="bt_setimo_Click">
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/setimo.jpg"/>
+            </Button.Background>
+            <!-- Disparar exibição da grid ao clicar (sem precisar alterar code-behind) -->
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_setimo" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button x:Name="bt_img2" Content="Button" HorizontalAlignment="Left" Height="204" Margin="304,253,0,0" VerticalAlignment="Top" Width="153" Click="bt_img2_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+
+        <Grid x:Name="gr_setimo" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.9" Visibility="Hidden">
+            <Grid.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFCACACA"/>
+                    <GradientStop Color="#FFEDEBEB" Offset="1"/>
+                </RadialGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <Button x:Name="bt_ocultar" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_setimo" Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
+        <Rectangle x:Name="rt_anarco_cat" HorizontalAlignment="Center" Height="57" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar">
             <Rectangle.Style>
                 <Style TargetType="{x:Type Rectangle}">
                     <Setter Property="Effect">
@@ -48,15 +115,12 @@
                 <DropShadowEffect Color="Gray" BlurRadius="25" ShadowDepth="8" Direction="320" Opacity="0.7"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Label x:Name="tx_Anarco_ca" Content="{}{Anarco-Cinema}" Margin="540,32,516,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top"/>
-        <Image x:Name="img_logo_ca" HorizontalAlignment="Left" Height="39" Margin="42,32,0,0" VerticalAlignment="Top" Width="39" Stretch="UniformToFill">
+        <Image x:Name="img_logo" HorizontalAlignment="Left" Height="39" Margin="195,32,0,0" VerticalAlignment="Top" Width="39" Source="/icone.png" Stretch="UniformToFill">
             <Image.Clip>
                 <RectangleGeometry Rect="0,0,39,39" RadiusX="16" RadiusY="16"/>
             </Image.Clip>
         </Image>
-        <Label Content="Bem Vindo Novamente" HorizontalAlignment="Center" Height="96" Margin="0,144,0,0" VerticalAlignment="Top" Width="386" FontFamily="Georgia" FontSize="36"/>
-        <Image x:Name="img_log" HorizontalAlignment="Left" Height="204" Margin="62,0,0,0" VerticalAlignment="Center" Width="154" Source="/setimo.jpg"/>
-        <Label Content="Label" HorizontalAlignment="Left" Height="12" Margin="62,469,0,0" VerticalAlignment="Top" Width="153" Background="White"/>
+        <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="0,32,0,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Center"/>
     </Grid>
 </Page>
 

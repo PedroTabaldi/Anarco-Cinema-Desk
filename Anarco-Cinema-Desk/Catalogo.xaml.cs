@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,6 +50,15 @@ namespace Anarco_Cinema_Desk
 
         }
 
+        private void bt_img2_Click(object sender, RoutedEventArgs e)
+        {
+           
 
+        }
+
+        private void bt_setimo_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }
