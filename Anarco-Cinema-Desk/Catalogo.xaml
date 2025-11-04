@@ -8,33 +8,89 @@
       d:DesignHeight="900" d:DesignWidth="1600"
       Title="Catalogo">
 
-    <!--
-    PSEUDOCÓDIGO (plano detalhado):
-    - Objetivo: fazer com que o botão "Ocultar" torne a Grid 'gr_setimo' invisível ao ser clicado.
-    - Estratégia: usar triggers XAML para não precisar alterar code-behind.
-    - Passos:
-      1. Identificar a Grid alvo: x:Name="gr_setimo".
-      2. Substituir o botão atual por um que contenha um Button.Triggers.
-      3. No EventTrigger para Button.Click, iniciar um BeginStoryboard.
-      4. Dentro do Storyboard usar ObjectAnimationUsingKeyFrames para animar a propriedade Visibility da Grid.
-      5. Definir um DiscreteObjectKeyFrame com Value = Collapsed (ou Hidden) em KeyTime 0:0:0.
-      6. Ao clicar, a Grid ficará com Visibility=Collapsed, efetivamente ocultando-a da interface.
-    -->
-
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
                 <GradientStop Color="#FFCACACA" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Bem Vindo Novamente" HorizontalAlignment="Center" Height="96" Margin="0,144,0,0" VerticalAlignment="Top" Width="386" FontFamily="Georgia" FontSize="36"/>
-        <Button x:Name="bt_setimo" Content="Ver mais sobre..." HorizontalAlignment="Left" Height="204" Margin="58,253,0,0" VerticalAlignment="Top" Width="153" Click="bt_setimo_Click">
+        <Button x:Name="bt_alien" Content="" HorizontalAlignment="Left" Height="300" Margin="400,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/alien.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Label Content="Bem Vindo Novamente" HorizontalAlignment="Center" Height="96" Margin="0,110,0,0" VerticalAlignment="Top" Width="386" FontFamily="Georgia" FontSize="36"/>
+        <Button x:Name="bt_setimo" Content="" HorizontalAlignment="Left" Height="300" Margin="100,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/setimo.jpg"/>
+
             </Button.Background>
             <!-- Disparar exibição da grid ao clicar (sem precisar alterar code-behind) -->
             <Button.Triggers>
-                <EventTrigger RoutedEvent="Button.Click">
+                <EventTrigger RoutedEvent="ButtonBase.Click">
                     <BeginStoryboard>
                         <Storyboard>
                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_setimo" Storyboard.TargetProperty="Visibility">
@@ -49,11 +105,6 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button x:Name="bt_img2" Content="Button" HorizontalAlignment="Left" Height="204" Margin="304,253,0,0" VerticalAlignment="Top" Width="153" Click="bt_img2_Click">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
 
         <Grid x:Name="gr_setimo" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.9" Visibility="Hidden">
             <Grid.Background>
@@ -65,7 +116,7 @@
             <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
-                    <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
                         <BeginStoryboard>
                             <Storyboard>
                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_setimo" Storyboard.TargetProperty="Visibility">
@@ -95,7 +146,8 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="40" Duration="0:0:0.3"/>
-                                        <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="#FF3A3A3A" Duration="0:0:0.3"/>
+                                        <!-- Alterado para preto semi-transparente (opacidade baixa) -->
+                                        <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="#88000000" Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -103,6 +155,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="25" Duration="0:0:0.3"/>
+                                        <!-- Restaura cor original ao sair -->
                                         <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="#FF1D1D1D" Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -121,6 +174,302 @@
             </Image.Clip>
         </Image>
         <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="0,32,0,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button x:Name="bt_vagabond" Content="" HorizontalAlignment="Left" Height="300" Margin="1000,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/vagabond.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt_jaw" Content="" HorizontalAlignment="Center" Height="300" Margin="0,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/jaw.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt_cure" Content="" HorizontalAlignment="Left" Height="300" Margin="1300,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/cure.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt_futuro" Content="" HorizontalAlignment="Left" Height="300" Margin="400,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/futuro.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt_meia" Content="" HorizontalAlignment="Left" Height="300" Margin="100,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/meia.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt_rio" Content="" HorizontalAlignment="Left" Height="300" Margin="1000,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/rio.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt_blade" Content="" HorizontalAlignment="Center" Height="300" Margin="0,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/blade.jpg"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="bt_acossado" Content="" HorizontalAlignment="Left" Height="300" Margin="1300,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+            <!-- Sombra inicial -->
+            <Button.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="6" Direction="320" Opacity="0.6"/>
+            </Button.Effect>
+
+            <!-- Animação da sombra ao passar o mouse -->
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="35" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="10" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="20" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/acossado.jpg"/>
+
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>
 

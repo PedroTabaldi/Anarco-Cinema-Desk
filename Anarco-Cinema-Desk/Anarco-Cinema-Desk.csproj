@@ -10,14 +10,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="acossado.jpg" />
+    <None Remove="alien.jpg" />
+    <None Remove="blade.jpg" />
+    <None Remove="cure.jpg" />
+    <None Remove="favorito_branco.png" />
+    <None Remove="favorito_cinza.png" />
     <None Remove="filme.jpg" />
     <None Remove="fundo.png" />
+    <None Remove="futuro.jpg" />
     <None Remove="icone.png" />
+    <None Remove="jaw.jpg" />
+    <None Remove="meia.jpg" />
     <None Remove="Mojica.jpg" />
     <None Remove="morangos-silvestres.jpg" />
+    <None Remove="rio.jpg" />
     <None Remove="same old.jpg" />
     <None Remove="setimo.jpg" />
     <None Remove="seventh_seal.jpg" />
+    <None Remove="vagabond.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,14 +37,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="acossado.jpg" />
+    <Resource Include="alien.jpg" />
+    <Resource Include="blade.jpg" />
+    <Resource Include="cure.jpg" />
+    <Resource Include="favorito_branco.png" />
+    <Resource Include="favorito_cinza.png" />
     <Resource Include="filme.jpg" />
     <Resource Include="fundo.png" />
+    <Resource Include="futuro.jpg" />
     <Resource Include="icone.png" />
+    <Resource Include="jaw.jpg" />
+    <Resource Include="meia.jpg" />
     <Resource Include="Mojica.jpg" />
     <Resource Include="morangos-silvestres.jpg" />
+    <Resource Include="rio.jpg" />
     <Resource Include="same old.jpg" />
     <Resource Include="setimo.jpg" />
     <Resource Include="seventh_seal.jpg" />
+    <Resource Include="vagabond.jpg" />
   </ItemGroup>
 
 </Project>
