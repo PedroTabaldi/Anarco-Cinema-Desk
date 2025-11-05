@@ -1699,24 +1699,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PEDROAUGUSTOPEDROSOT\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\projeto\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj",
       "projectName": "Anarco-Cinema-Desk",
-      "projectPath": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj",
-      "packagesPath": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\projeto\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\projeto\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\PEDROAUGUSTOPEDROSOT\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1776,7 +1771,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
