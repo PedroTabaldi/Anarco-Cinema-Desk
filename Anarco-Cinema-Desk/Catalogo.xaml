@@ -51,6 +51,7 @@
 
             </Button.Background>
         </Button>
+
         <Button x:Name="bt_acossado" Content="" HorizontalAlignment="Left" Height="300" Margin="1300,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
             <!-- Sombra inicial -->
             <Button.Effect>
@@ -485,7 +486,59 @@
             </Image.Clip>
         </Image>
         <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="0,32,0,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Grid x:Name="gr_alien" HorizontalAlignment="Center" Height="720" Margin="0,110,0,0" VerticalAlignment="Top" Width="1200" Background="White" Opacity="0.5" Visibility="Hidden"/>
+        <Grid x:Name="gr_alien" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.9" Visibility="Hidden">
+            <Grid.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFCACACA"/>
+                    <GradientStop Color="#FFEDEBEB" Offset="1"/>
+                </RadialGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <Button x:Name="bt_ocultar_alien" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_alien" Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
+        <Grid x:Name="gr_jaw" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.9" Visibility="Hidden">
+            <Grid.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFCACACA"/>
+                    <GradientStop Color="#FFEDEBEB" Offset="1"/>
+                </RadialGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <Button x:Name="bt_ocultar_jaw" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_jaw" Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
+
     </Grid>
 </Page>
 
