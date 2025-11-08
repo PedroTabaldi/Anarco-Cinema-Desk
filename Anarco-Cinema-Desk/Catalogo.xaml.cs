@@ -58,7 +58,6 @@ namespace Anarco_Cinema_Desk
 
         private void bt_setimo_Click(object sender, RoutedEventArgs e)
         {
-           
         }
     }
 }
