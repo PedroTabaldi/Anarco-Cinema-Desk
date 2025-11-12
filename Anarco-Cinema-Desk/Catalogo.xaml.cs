@@ -40,7 +40,8 @@ namespace Anarco_Cinema_Desk
             {
                 NavigationService.GoBack();
             }
-            else {
+            else
+            {
                 NavigationService.Navigate(new Logar());
             }
         }
@@ -52,7 +53,7 @@ namespace Anarco_Cinema_Desk
 
         private void bt_img2_Click(object sender, RoutedEventArgs e)
         {
-           
+
 
         }
 
