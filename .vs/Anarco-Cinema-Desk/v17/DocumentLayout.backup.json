@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\catalogo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\catalogo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\cadastro.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\cadastro.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cadastro.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml.cs",
+              "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Cadastro.xaml.cs",
+              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml.cs",
+              "RelativeToolTip": "Anarco-Cinema-Desk\\Cadastro.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA6wC8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T23:04:22.921Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,7 +45,7 @@
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Catalogo.xaml.cs",
               "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml.cs",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Catalogo.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwB0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-29T22:41:55.199Z",
               "EditorCaption": ""

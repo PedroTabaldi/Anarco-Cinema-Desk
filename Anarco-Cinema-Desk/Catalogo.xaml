@@ -542,7 +542,7 @@
             </Button.Triggers>
         </Button>
 
-        <Grid x:Name="gr_setimo" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.9" Visibility="Hidden">
+        <Grid x:Name="gr_setimo" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.925">
             <Grid.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFCACACA"/>
@@ -550,7 +550,7 @@
                 </RadialGradientBrush>
             </Grid.Background>
             <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
-            <Button x:Name="bt_ocultar" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
+            <Button x:Name="bt_ocultar" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240" Background="White">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
                         <BeginStoryboard>
@@ -567,6 +567,7 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
+            <Button Content="" HorizontalAlignment="Left" Height="103" Margin="290,409,0,0" VerticalAlignment="Top" Width="107" Background="#FFC16F6F"/>
         </Grid>
         <Rectangle x:Name="rt_anarco_cat" HorizontalAlignment="Center" Height="57" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar">
             <Rectangle.Style>
@@ -669,7 +670,7 @@
                     <GradientStop Color="#FFEDEBEB" Offset="1"/>
                 </RadialGradientBrush>
             </Grid.Background>
-            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <TextBlock Text="No inverno, no sul da França, uma jovem é encontrada congelada em uma vala. Ela está despenteada, um vagabundo. Através de flashbacks e entrevistas breves, traçamos suas últimas semanas enquanto ela acampa sozinha ou se apaixona por vários homens e mulheres, muitos dos quais projetam suas necessidades para ela ou tentam dar a sua direção de vida. Ela se agacha em uma antiga casa fumando haxixe com um homem, se apaixona por um trabalhador tunisiano e trabalha ao lado dele podando videiras, fica com um casal pastoreando cabras, encontra um agrônomo tentando salvar árvores de avião, fica bêbado com uma mulher velha e tem uma oferta para aparecer em filmes pornôs" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar_vagabond" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
@@ -695,7 +696,7 @@
                     <GradientStop Color="#FFEDEBEB" Offset="1"/>
                 </RadialGradientBrush>
             </Grid.Background>
-            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <TextBlock Text="Uma onda de assassinatos horríveis está varrendo Tóquio. A única conexão é um X sangrento esculpido no pescoço de cada uma das vítimas. Em cada caso, o assassino é encontrado perto da vítima e não se lembra de nada do crime. O detetive Takabe e o psicólogo Sakuma são chamados para descobrir a conexão, mas sua investigação não vai a lugar nenhum. Um jovem estranho é preso perto do local do último assassinato, que tem um efeito estranho em todos que entram em contato com ele. O detetive Takabe inicia uma série de interrogatórios para determinar a ligação do homem com os assassinatos." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar_cure" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
@@ -721,7 +722,7 @@
                     <GradientStop Color="#FFEDEBEB" Offset="1"/>
                 </RadialGradientBrush>
             </Grid.Background>
-            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <TextBlock Text="Impulsionado pelo desejo esmagador de ter um filho para continuar sua linhagem, o blasfemo Zé do Caixão, o mau funerário de uma aldeia brasileira unida e temente a Deus, coloca sua mente em encontrar a mulher perfeita para levar seu filho. E tendo se cansado de sua esposa infértil Lenita, o desprezível funerário coloca sua mira em engravidar a namorada de seu melhor amigo Antonio, Terezinha, e ninguém pode ficar em seu caminho. Mas como inocentes morrem à esquerda e à direita, o julgamento vem sobre Zé no Dia dos Mortos em forma de um cartomante local, e nada pode parar de vingança – nem mesmo o grave frio e escuro." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar_meia" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
@@ -747,7 +748,7 @@
                     <GradientStop Color="#FFEDEBEB" Offset="1"/>
                 </RadialGradientBrush>
             </Grid.Background>
-            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <TextBlock Text="Os críticos dizem que 'The Terminator' é aclamado por sua viagem no tempo inventiva e premissa de IA, efeitos especiais pioneiros e performances poderosas, especialmente o ciborgue ameaçador de Arnold Schwarzenegger. O ambiente sombrio e tecnológico do filme, o enredo emocionante e a evolução de Sarah Connor de uma garçonete ingênua para um guardião formidável são frequentemente elogiados. Seu exame do destino versus livre arbítrio e as consequências da tecnologia de ponta atinge um acorde com os espectadores, solidificando seu status como um clássico de ficção científica." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar_futuro" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
@@ -773,7 +774,7 @@
                     <GradientStop Color="#FFEDEBEB" Offset="1"/>
                 </RadialGradientBrush>
             </Grid.Background>
-            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <TextBlock Text="Os críticos dizem que Blade Runner é aclamado por seus temas profundos, visuais impressionantes e história intrincada, muitas vezes observando seu exame da humanidade, identidade e ética de vida artificial. Muitos elogiam sua riqueza filosófica e mundo imersivo, misturando filme noir com ficção científica. No entanto, alguns acham o ritmo lento e os personagens subdesenvolvidos. O debate existe sobre diferentes cortes, com preferências variando entre o corte original e o diretor. A trilha sonora e os efeitos especiais, embora inovadores, recebem críticas mistas, com alguns considerando-os datados ou dependentes do humor." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar_blade" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
@@ -799,7 +800,7 @@
                     <GradientStop Color="#FFEDEBEB" Offset="1"/>
                 </RadialGradientBrush>
             </Grid.Background>
-            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <TextBlock Text="O humilde sambista carioca Espírito da Luz cai de um trem lotado da Central do Brasil e fratura o crânio. Enquanto agoniza ele se lembra dos últimos meses de sua vida, a luta para ver seus sambas gravados e interpretados por grandes artistas como Angela Maria, as trapaças do falso parceiro Maurício, o filho adolescente que se envolve com criminosos perigosos e o seu novo relacionamento, com a mulata Adelaide. No hospital ele recebe a visita de Moacir, músico de orquestra, que é admirador de suas composições e se oferecera para colocá-las em partituras. " HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar_rio" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
@@ -825,7 +826,7 @@
                     <GradientStop Color="#FFEDEBEB" Offset="1"/>
                 </RadialGradientBrush>
             </Grid.Background>
-            <TextBlock Text="Os críticos afirmam que &quot;O Sétimo Selo&quot; explora a mortalidade, a fé e questões existenciais através de sua ambientação medieval. O jogo de xadrez com a Morte simboliza a luta da humanidade contra o destino. Temas como o caos social e o fervor religioso são retratados por meio da peste, da queima de bruxas e dos flagelantes. Personagens como o cavaleiro, o escudeiro e os atores oferecem perspectivas variadas sobre a vida e a morte, enriquecendo a narrativa. A abordagem alegórica do filme ressoa com o público contemporâneo, destacando a natureza atemporal de seus temas." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
+            <TextBlock Text="Michel Poiccard, um sociopata irresponsável e pequeno ladrão, rouba um carro e assassina impulsivamente o policial de motocicleta que o persegue. Agora procurado pelas autoridades, ele renova seu relacionamento com Patricia Franchini, uma garota americana que estuda jornalismo na Sorbonne, que ele conheceu em Nice algumas semanas antes. Antes de deixar Paris, ele planeja cobrar uma dívida de um conhecido do submundo e espera que ela o acompanhe em sua fuga planejada para a Itália. Mesmo com o rosto nos jornais e na mídia locais, Poiccard parece alheio à rede que está lentamente fechando em torno dele enquanto ele persegue imprudentemente seu amor por filmes americanos e interesse libidinoso no belo americano" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26"/>
             <Button x:Name="bt_ocultar_acossado" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
