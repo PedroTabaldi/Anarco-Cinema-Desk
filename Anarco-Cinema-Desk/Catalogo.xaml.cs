@@ -27,7 +27,7 @@ namespace Anarco_Cinema_Desk
             InitializeComponent();
 
             ImageBrush brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\img\\poster\\setimo.jpg", UriKind.Absolute));
+            //brush.ImageSource = new BitmapImage(new Uri("C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\img\\poster\\setimo.jpg", UriKind.Absolute));
             brush.Stretch = Stretch.UniformToFill;
             this.Background = brush;
 
@@ -48,7 +48,7 @@ namespace Anarco_Cinema_Desk
 
         private void anarco_voltar(object sender, MouseButtonEventArgs e)
         {
-
+            NavigationService.Navigate(new Logar());
         }
 
         private void bt_img2_Click(object sender, RoutedEventArgs e)

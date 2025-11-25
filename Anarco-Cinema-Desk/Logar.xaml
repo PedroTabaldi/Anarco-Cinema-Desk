@@ -24,12 +24,28 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FF707070" Duration="0:0:0.25"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="40" Duration="0:0:0.25"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="White" Duration="0:0:0.25"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="25" Duration="0:0:0.25"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>
         </Button>
+
         <Button x:Name="bt_filme" Content="Ver filmes" HorizontalAlignment="Left" Margin="993,692,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_filme_Click" FontSize="32" Opacity="0.9">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -41,12 +57,28 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FF707070" Duration="0:0:0.25"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="40" Duration="0:0:0.25"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="White" Duration="0:0:0.25"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="25" Duration="0:0:0.25"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>
         </Button>
+
         <Label x:Name="tx_ini" Content="O Que você deseja fazer " HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="63" Margin="0,124,0,0" FontFamily="Georgia" Foreground="White" Height="104" Width="670" Opacity="0.9">
             <Label.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="40" ShadowDepth="8" Direction="320" Opacity="0.9"/>
