@@ -8,6 +8,25 @@
       d:DesignHeight="900" d:DesignWidth="1600"
       Title="Login">
 
+    <!-- Plano (pseudocódigo detalhado):
+         1) Adicionar animações nos botões "Entrar" e "Cadastrar".
+         2) No ControlTemplate de cada Button, garantir que a Border tenha:
+            - x:Name="border"
+            - RenderTransform com ScaleTransform inicial (1,1)
+            - DropShadowEffect existente (padrão)
+         3) Substituir o Trigger simples por Trigger com EnterActions / ExitActions:
+            - Ao IsMouseOver=True:
+                * Animar ScaleX/ScaleY para 1.06 (suavizar com Duration 0.18s)
+                * Animar Effect.BlurRadius para 60
+                * Animar Background.Color para um tom mais escuro (#FF707070)
+            - Ao sair do IsMouseOver:
+                * Reverter as animações para valores iniciais
+            - Ao IsPressed=True:
+                * Animar ScaleX/ScaleY para 0.98 rapidamente (efeito de clique)
+                * Reduzir BlurRadius para 30 (efeito "pressionado")
+         4) Repetir a mesma estrutura para ambos os botões para consistência visual.
+    -->
+
     <Grid>
         <Grid.Background>
             <RadialGradientBrush>
@@ -96,10 +115,15 @@
                 <RectangleGeometry Rect="0,0,39,39" RadiusX="16" RadiusY="16"/>
             </Image.Clip>
         </Image>
+
+        <!-- Botão Entrar com animação -->
         <Button x:Name="bt_entrar" Content="Entrar" HorizontalAlignment="Left" Margin="127,686,0,0" VerticalAlignment="Top" Height="98" Width="197" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        </Border.RenderTransform>
                         <Border.Effect>
                             <DropShadowEffect Color="Black" BlurRadius="45" ShadowDepth="15.6" Direction="320" Opacity="1"/>
                         </Border.Effect>
@@ -107,16 +131,61 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.06" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.06" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="60" Duration="0:0:0.18"/>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FF707070" Duration="0:0:0.18"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="45" Duration="0:0:0.18"/>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FFFFFFFF" Duration="0:0:0.18"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="0.98" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="0.98" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="30" Duration="0:0:0.08"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.06" Duration="0:0:0.12"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.06" Duration="0:0:0.12"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="60" Duration="0:0:0.12"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>
         </Button>
+
+        <!-- Botão Cadastrar com animação (mesma aparência e comportamento) -->
         <Button x:Name="bt_cadastrar" Content="Cadastrar" HorizontalAlignment="Left" Height="98" Margin="418,686,0,0" VerticalAlignment="Top" Width="198" Background="White" Foreground="#FF1A1A1A" FontSize="32" FontFamily="Georgia" Click="bt_cadastrar_Click_1" RenderTransformOrigin="0.493,0.867" Opacity="0.9">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        </Border.RenderTransform>
                         <Border.Effect>
                             <DropShadowEffect Color="Black" BlurRadius="45" ShadowDepth="15.6" Direction="320" Opacity="1"/>
                         </Border.Effect>
@@ -124,7 +193,47 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.06" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.06" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="60" Duration="0:0:0.18"/>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FF707070" Duration="0:0:0.18"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.18"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="45" Duration="0:0:0.18"/>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FFFFFFFF" Duration="0:0:0.18"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="0.98" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="0.98" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="30" Duration="0:0:0.08"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.06" Duration="0:0:0.12"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.06" Duration="0:0:0.12"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Effect.BlurRadius" To="60" Duration="0:0:0.12"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

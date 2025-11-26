@@ -16,8 +16,17 @@
          - animar Effect.BlurRadius -> 35 e Effect.ShadowDepth -> 10 em 0.2s
          - animar ScaleTransform.ScaleX/Y -> 1.08 em 0.2s
        - adiciona ExitActions para restaurar valores para 20/6 e escala para 1
-    2) Aplicar Style a todos os botões cujo x:Name começa com "bt_" adicionando Style="{StaticResource BtHoverStyle}"
-    3) Remover styles/efeitos/transformações duplicadas de botões individuais e preservar triggers de clique e backgrounds existentes.
+    2) Adicionar novo Style "StarButtonStyle" para os botões de avaliação (es_1, es_2, es_3):
+       - Setter para RenderTransformOrigin central e RenderTransform ScaleTransform(1,1)
+       - Setter para Foreground usando SolidColorBrush inicial cinza claro (#FFB0B0B0)
+       - Triggers: IsMouseOver -> anima escala para 1.3 e cor do Foreground para dourado (#FFFFD700)
+                 IsMouseOver ExitActions -> retorna escala e cor
+       - (não confiar em EventTrigger dentro de Style para Click) -> usar Button.Triggers individuais para animação de clique
+    3) Aplicar Style="{StaticResource StarButtonStyle}" aos botões es_1, es_2, es_3
+    4) Em cada botão es_* adicionar Button.Triggers com EventTrigger no Click que:
+       - anima rapidamente ScaleX/Y para 1.45 com AutoReverse (efeito de "pulse")
+       - preserva Click handlers existentes (es_1_Click, es_2_Click)
+    5) Garantir que demais atributos (Background, BorderBrush, FontSize) sejam preservados.
     -->
 
     <Page.Resources>
@@ -52,6 +61,46 @@
                                 <DoubleAnimation Storyboard.TargetProperty="Effect.ShadowDepth" To="6" Duration="0:0:0.2"/>
                                 <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
                                 <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Estilo específico para os botões de estrela (es_1, es_2, es_3) -->
+        <Style x:Key="StarButtonStyle" TargetType="Button">
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Setter.Value>
+            </Setter>
+            <!-- Foreground definido como SolidColorBrush para permitir animação da cor -->
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="#FFB0B0B0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.30" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.30" Duration="0:0:0.15"/>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)" To="#FFFFD700" Duration="0:0:0.15"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.18"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.18"/>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)" To="#FFB0B0B0" Duration="0:0:0.18"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </Trigger.ExitActions>
@@ -303,7 +352,46 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Height="103" Margin="290,409,0,0" VerticalAlignment="Top" Width="107" Background="#FFC16F6F"/>
+
+            <!-- Botões de avaliação com animações aplicadas -->
+            <Button x:Name="es_1"  Content="★" HorizontalAlignment="Left" Height="68" Margin="500,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_1_Click" BorderBrush="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <Button x:Name="es_2"  Content="★" HorizontalAlignment="Center" Height="68" Margin="0,341,0,0" VerticalAlignment="Top" Width="58" FontSize="54" Click="es_2_Click" BorderBrush="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <Button x:Name="es_3" Content="★" HorizontalAlignment="Left" Height="68" Margin="682,344,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_3_Click" BorderBrush="{x:Null}" >
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" />
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
         </Grid>
 
         <Rectangle x:Name="rt_anarco_cat" HorizontalAlignment="Center" Height="57" Margin="0,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="1240" Fill="#FF1D1D1D" RadiusX="20" RadiusY="25" MouseDown="anarco_voltar">
@@ -347,7 +435,7 @@
         </Image>
         <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="0,32,0,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
-        <Grid x:Name="gr_alien" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
+        <Grid x:Name="gr_alien" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95">
             <Grid.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFCACACA"/>
@@ -355,6 +443,7 @@
                 </RadialGradientBrush>
             </Grid.Background>
             <TextBlock Text="Os críticos dizem que Alien é celebrado por seus efeitos inovadores, design icônico de criaturas e tensão atmosférica. O suspense do filme, interações realistas e abordagem de terror minimalista são frequentemente elogiados. A performance de Sigourney Weaver como Ripley e a influência de gênero do filme são frequentemente elogiadas. O design de produção, trilha sonora misteriosa e efeitos práticos são conhecidos por seu impacto. Apesar de alguns ritmos e críticas de desenvolvimento de personagens, 'Alien' é considerado como um trabalho de ficção científica seminal." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26" FontFamily="Georgia"/>
+
             <Button x:Name="bt_ocultar_alien" Style="{StaticResource BtHoverStyle}" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240" Background="White" FontFamily="Georgia" FontSize="36">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
@@ -367,6 +456,42 @@
                                         </DiscreteObjectKeyFrame.Value>
                                     </DiscreteObjectKeyFrame>
                                 </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ea_1"  Content="★" HorizontalAlignment="Left" Height="68" Margin="500,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ea_1_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ea_3"  Content="★" HorizontalAlignment="Left" Height="68" Margin="682,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ea_3_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ea_2"  Content="★" HorizontalAlignment="Center" Height="68" Margin="0,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ea_2_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>

@@ -13,7 +13,7 @@
             <ImageBrush ImageSource="/fundo.png" />
         </Grid.Background>
 
-        <Button x:Name="bt_logar" Content="Logar Filme" HorizontalAlignment="Left" Margin="334,692,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
+        <Button x:Name="bt_logar" Content="Sobre o Autor" HorizontalAlignment="Left" Margin="334,692,0,0" VerticalAlignment="Top" Height="98" Width="248" Background="White" FontFamily="Georgia" Click="bt_logar_Click" Foreground="#FF1A1A1A" FontSize="32" Opacity="0.9">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">

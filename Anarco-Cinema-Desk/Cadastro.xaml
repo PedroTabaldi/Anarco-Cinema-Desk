@@ -100,15 +100,68 @@
         <Button x:Name="bt_cada" Content="Registrar" HorizontalAlignment="Left" Height="98" Margin="272,684,0,0" VerticalAlignment="Top" Width="197" Click="Button_Click_1" FontSize="32" FontFamily="Georgia" Background="White">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" RenderTransformOrigin="0.5,0.5">
+                        <!-- RenderTransform para escalonamento -->
+                        <Border.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        </Border.RenderTransform>
                         <Border.Effect>
+                            <!-- Efeito de sombra que será animado -->
                             <DropShadowEffect Color="Black" BlurRadius="45" ShadowDepth="15.6" Direction="320" Opacity="1"/>
                         </Border.Effect>
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <!-- Trigger animado usando EnterActions/ExitActions -->
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF707070"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- "Pop" suave -->
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.08" Duration="0:0:0.18">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase Amplitude="0.45" EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.08" Duration="0:0:0.18">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase Amplitude="0.45" EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+
+                                        <!-- Intensificar a sombra -->
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)" To="70" Duration="0:0:0.25"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" To="22" Duration="0:0:0.25"/>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)" To="#FF333333" Duration="0:0:0.25"/>
+                                        
+                                        <!-- Opcional: escurecer levemente o fundo do botão no hover -->
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FFBFBFBF" Duration="0:0:0.18"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Reverter para estado original -->
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.0" Duration="0:0:0.25">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase Amplitude="0.35" EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.0" Duration="0:0:0.25">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase Amplitude="0.35" EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)" To="45" Duration="0:0:0.3"/>
+                                        <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" To="15.6" Duration="0:0:0.3"/>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)" To="Black" Duration="0:0:0.3"/>
+                                        
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="White" Duration="0:0:0.25"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

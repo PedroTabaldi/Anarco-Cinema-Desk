@@ -60,5 +60,48 @@ namespace Anarco_Cinema_Desk
         private void bt_setimo_Click(object sender, RoutedEventArgs e)
         {
         }
+
+        private void es_1_Click(object sender, RoutedEventArgs e)
+        {
+            es_1.Foreground = Brushes.Yellow;
+            es_2.Foreground = Brushes.Black;
+            es_3.Foreground = Brushes.Black;
+
+        }
+
+        private void es_2_Click(object sender, RoutedEventArgs e)
+        {
+            es_1.Foreground = Brushes.Yellow;
+            es_2.Foreground = Brushes.Yellow;
+            es_3.Foreground = Brushes.Black;
+        }
+
+        private void es_3_Click(object sender, RoutedEventArgs e)
+        {
+            es_1.Foreground = Brushes.Yellow;
+            es_2.Foreground = Brushes.Yellow;
+            es_3.Foreground = Brushes.Yellow;
+        }
+
+        private void ea_2_Click(object sender, RoutedEventArgs e)
+        {
+            es_1.Foreground = Brushes.Yellow;
+            ea_2.Foreground = Brushes.Yellow;
+            ea_3.Foreground = Brushes.Black;
+        }
+
+        private void ea_1_Click(object sender, RoutedEventArgs e)
+        {
+            ea_1.Foreground = Brushes.Yellow;
+            ea_2.Foreground = Brushes.Black;
+            ea_3.Foreground = Brushes.Black;
+        }
+
+        private void ea_3_Click(object sender, RoutedEventArgs e)
+        {
+            ea_1.Foreground = Brushes.Yellow;
+            ea_2.Foreground = Brushes.Yellow;
+            ea_3.Foreground = Brushes.Yellow;
+        }
     }
 }
