@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace Anarco_Cinema_Desk
 {
@@ -59,6 +62,25 @@ namespace Anarco_Cinema_Desk
 
         private void bt_setimo_Click(object sender, RoutedEventArgs e)
         {
+           
+        }
+
+        private void SetEstrela(Button estrela)
+        {
+        int valor = 1;
+        es_1  valor;
+
+
+            if (estrela == es_1)
+            {
+                string querynome = "INSERT INTO estrela (estrelas) VALUES (@estrelas)";
+                using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
+                {
+                    command.Parameters.AddWithValue("@Nome", estrela);
+                    command.ExecuteNonQuery();
+                }
+            }
+            
         }
 
         private void es_1_Click(object sender, RoutedEventArgs e)
@@ -102,6 +124,70 @@ namespace Anarco_Cinema_Desk
             ea_1.Foreground = Brushes.Yellow;
             ea_2.Foreground = Brushes.Yellow;
             ea_3.Foreground = Brushes.Yellow;
+        }
+
+        private void ej_1_Click(object sender, RoutedEventArgs e)
+        {
+            ej_1.Foreground = Brushes.Yellow;
+            ej_2.Foreground = Brushes.Black;
+            ej_3.Foreground = Brushes.Black;
+        }
+
+        private void ej_2_Click(object sender, RoutedEventArgs e)
+        {
+            ej_1.Foreground = Brushes.Yellow;
+            ej_2.Foreground = Brushes.Yellow;
+            ej_3.Foreground = Brushes.Black;
+        }
+
+        private void ej_3_Click(object sender, RoutedEventArgs e)
+        {
+            ej_1.Foreground = Brushes.Yellow;
+            ej_2.Foreground = Brushes.Yellow;
+            ej_3.Foreground = Brushes.Yellow;
+        }
+
+        private void ev_3_Click(object sender, RoutedEventArgs e)
+        {
+            ev_1.Foreground = Brushes.Yellow;
+            ev_2.Foreground = Brushes.Yellow;
+            ev_3.Foreground = Brushes.Yellow;
+        }
+
+        private void ev_2_Click(object sender, RoutedEventArgs e)
+        {
+            ev_1.Foreground = Brushes.Yellow;
+            ev_2.Foreground = Brushes.Yellow;
+            ev_3.Foreground = Brushes.Black;
+        }
+
+        private void ev_1_Click(object sender, RoutedEventArgs e)
+        {
+            ev_1.Foreground = Brushes.Yellow;
+            ev_2.Foreground = Brushes.Black;
+            ev_3.Foreground = Brushes.Black;
+        }
+
+        private void ec_1_Click(object sender, RoutedEventArgs e)
+        {
+            ec_1.Foreground = Brushes.Yellow;
+            ec_2.Foreground = Brushes.Black;
+            ec_3.Foreground = Brushes.Black;
+        }
+
+        private void ec_2_Click(object sender, RoutedEventArgs e)
+        {
+            ec_1.Foreground = Brushes.Yellow;
+            ec_2.Foreground = Brushes.Yellow;
+            ec_3.Foreground = Brushes.Black;
+        }
+
+        private void ec_3_Click(object sender, RoutedEventArgs e)
+        {
+            ec_1.Foreground = Brushes.Yellow;
+            ec_2.Foreground = Brushes.Yellow;
+            ec_3.Foreground = Brushes.Yellow;
+
         }
     }
 }

@@ -354,7 +354,7 @@
             </Button>
 
             <!-- Botões de avaliação com animações aplicadas -->
-            <Button x:Name="es_1"  Content="★" HorizontalAlignment="Left" Height="68" Margin="500,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_1_Click" BorderBrush="{x:Null}">
+            <Button x:Name="es_1"  Content="★" HorizontalAlignment="Left" Height="68" Margin="500,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_1_Click" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
                         <BeginStoryboard>
@@ -367,7 +367,7 @@
                 </Button.Triggers>
             </Button>
 
-            <Button x:Name="es_2"  Content="★" HorizontalAlignment="Center" Height="68" Margin="0,341,0,0" VerticalAlignment="Top" Width="58" FontSize="54" Click="es_2_Click" BorderBrush="{x:Null}">
+            <Button x:Name="es_2"  Content="★" HorizontalAlignment="Center" Height="68" Margin="0,341,0,0" VerticalAlignment="Top" Width="58" FontSize="54" Click="es_2_Click" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
                         <BeginStoryboard>
@@ -380,7 +380,7 @@
                 </Button.Triggers>
             </Button>
 
-            <Button x:Name="es_3" Content="★" HorizontalAlignment="Left" Height="68" Margin="682,344,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_3_Click" BorderBrush="{x:Null}" >
+            <Button x:Name="es_3" Content="★" HorizontalAlignment="Left" Height="68" Margin="682,344,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_3_Click" BorderBrush="{x:Null}" Background="{x:Null}" >
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
                         <BeginStoryboard>
@@ -434,8 +434,7 @@
             </Image.Clip>
         </Image>
         <Label x:Name="tx_Anarco" Content="{}{Anarco-Cinema}" Margin="0,32,0,0" Background="Transparent" Foreground="#FFD4D4D4" Height="39" FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-
-        <Grid x:Name="gr_alien" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95">
+        <Grid x:Name="gr_alien" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
             <Grid.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFCACACA"/>
@@ -498,7 +497,6 @@
                 </Button.Triggers>
             </Button>
         </Grid>
-
         <Grid x:Name="gr_jaw" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
             <Grid.Background>
                 <RadialGradientBrush>
@@ -524,8 +522,105 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
+            <Button x:Name="ej_1"  Content="★" HorizontalAlignment="Left" Height="68" Margin="500,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ej_1_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ej_3"  Content="★" HorizontalAlignment="Left" Height="68" Margin="682,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ej_3_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ej_2"  Content="★" HorizontalAlignment="Center" Height="68" Margin="0,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ej_2_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
         </Grid>
-
+        <Grid x:Name="gr_cure" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
+            <Grid.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFCACACA"/>
+                    <GradientStop Color="#FFEDEBEB" Offset="1"/>
+                </RadialGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="Uma onda de assassinatos horríveis está varrendo Tóquio. A única conexão é um X sangrento esculpido no pescoço de cada uma das vítimas. Em cada caso, o assassino é encontrado perto da vítima e não se lembra de nada do crime. O detetive Takabe e o psicólogo Sakuma são chamados para descobrir a conexão, mas sua investigação não vai a lugar nenhum. Um jovem estranho é preso perto do local do último assassinato, que tem um efeito estranho em todos que entram em contato com ele. O detetive Takabe inicia uma série de interrogatórios para determinar a ligação do homem com os assassinatos." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26" FontFamily="Georgia"/>
+            <Button x:Name="bt_ocultar_cure" Style="{StaticResource BtHoverStyle}" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240" Background="White" FontFamily="Georgia" FontSize="36">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_cure" Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ec_1"  Content="★" HorizontalAlignment="Left" Height="68" Margin="500,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ec_1_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ec_3"  Content="★" HorizontalAlignment="Left" Height="68" Margin="682,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ec_3_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ec_2"  Content="★" HorizontalAlignment="Center" Height="68" Margin="0,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ec_2_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
         <Grid x:Name="gr_vagabond" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
             <Grid.Background>
                 <RadialGradientBrush>
@@ -551,28 +646,37 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
-        </Grid>
-
-        <Grid x:Name="gr_cure" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
-            <Grid.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FFCACACA"/>
-                    <GradientStop Color="#FFEDEBEB" Offset="1"/>
-                </RadialGradientBrush>
-            </Grid.Background>
-            <TextBlock Text="Uma onda de assassinatos horríveis está varrendo Tóquio. A única conexão é um X sangrento esculpido no pescoço de cada uma das vítimas. Em cada caso, o assassino é encontrado perto da vítima e não se lembra de nada do crime. O detetive Takabe e o psicólogo Sakuma são chamados para descobrir a conexão, mas sua investigação não vai a lugar nenhum. Um jovem estranho é preso perto do local do último assassinato, que tem um efeito estranho em todos que entram em contato com ele. O detetive Takabe inicia uma série de interrogatórios para determinar a ligação do homem com os assassinatos." HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="1175" TextAlignment="Justify" Height="292" TextWrapping="Wrap" FontSize="26" FontFamily="Georgia"/>
-            <Button x:Name="bt_ocultar_cure" Style="{StaticResource BtHoverStyle}" Content="Ocultar" HorizontalAlignment="Center" Height="99" Margin="0,409,0,0" VerticalAlignment="Top" Width="240" Background="White" FontFamily="Georgia" FontSize="36">
+            <Button x:Name="ev_1"  Content="★" HorizontalAlignment="Left" Height="68" Margin="500,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ev_1_Click" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
                         <BeginStoryboard>
                             <Storyboard>
-                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_cure" Storyboard.TargetProperty="Visibility">
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0">
-                                        <DiscreteObjectKeyFrame.Value>
-                                            <Visibility>Collapsed</Visibility>
-                                        </DiscreteObjectKeyFrame.Value>
-                                    </DiscreteObjectKeyFrame>
-                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ev_3"  Content="★" HorizontalAlignment="Left" Height="68" Margin="682,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ev_3_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="ev_2"  Content="★" HorizontalAlignment="Center" Height="68" Margin="0,341,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="ev_2_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.45" Duration="0:0:0.09" AutoReverse="True"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>

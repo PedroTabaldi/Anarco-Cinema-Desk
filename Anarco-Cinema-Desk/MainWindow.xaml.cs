@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net.NetworkInformation;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,9 @@ namespace Anarco_Cinema_Desk
         public MainWindow()
         {
             InitializeComponent();
+            
+           ConecxaoBanco.Conectar();
+
         }
     }
 }

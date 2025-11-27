@@ -41,26 +41,49 @@ namespace Anarco_Cinema_Desk
             // Supondo que cx_email_re e cx_senha_re são TextBox no XAML
             string email = cx_email_re.Text;
             string senha = cx_senha_re.Text;
+            string nome = cx_nome.Text;
 
             // Exemplo simples de inserção no banco de dados usando MySql.Data
             // Ajuste a string de conexão conforme necessário
-            string connectionString = "Server=localhost;Database=login;Uid=root;Pwd=root;";
             string query = "INSERT INTO usuarios (Email, Senha) VALUES (@Email, @Senha)";
+            string nomes = $"SELECT * FROM estrela";
 
             try
             {
-                using (var connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+                MySqlCommand cmd = new MySqlCommand(nomes, ConecxaoBanco.Conecxao);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
                 {
-                    connection.Open();
-                    using (var command = new MySql.Data.MySqlClient.MySqlCommand(query, connection))
+                    string nomeExistente = reader.GetString("Nome");
+
+                    if (nomeExistente == nome)
                     {
-                        command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@Senha", senha);
-                        command.ExecuteNonQuery();
+                        MessageBox.Show("Nome já cadastrado: " + nomeExistente);
+                        reader.Close();
                     }
+                    else
+                    {
+                        reader.Close();
+                        string querynome = "INSERT INTO estrela (Nome) VALUES (@Nome)";
+                        using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
+                        {
+                            command.Parameters.AddWithValue("@Nome", nome);
+                            command.ExecuteNonQuery();
+                        }
+
+                        using (var command = new MySqlCommand(query, ConecxaoBanco.Conecxao))
+                        {
+                            command.Parameters.AddWithValue("@Email", email);
+                            command.Parameters.AddWithValue("@Senha", senha);
+                            command.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("E-mail e senha cadastrados com sucesso!");
+                        NavigationService.Navigate(new Login());
+                    }
+
                 }
-                MessageBox.Show("E-mail e senha cadastrados com sucesso!");
-                NavigationService.Navigate(new Login());
+
             }
             catch (Exception ex)
             {
