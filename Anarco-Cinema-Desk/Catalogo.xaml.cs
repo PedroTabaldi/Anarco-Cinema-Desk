@@ -1,7 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,8 +18,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
-using System.Configuration;
 
 namespace Anarco_Cinema_Desk
 {
@@ -62,132 +63,195 @@ namespace Anarco_Cinema_Desk
 
         private void bt_setimo_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
-        private void SetEstrela(Button estrela)
+        private void SetEstrela(string name, int pontos)
         {
-        int valor = 1;
-        es_1  valor;
+            string querynome = $"UPDATE estrela SET estrelas = {pontos}, Filme = '{name}' WHERE nome = 'g'";
 
-
-            if (estrela == es_1)
+            using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
             {
-                string querynome = "INSERT INTO estrela (estrelas) VALUES (@estrelas)";
-                using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
-                {
-                    command.Parameters.AddWithValue("@Nome", estrela);
-                    command.ExecuteNonQuery();
-                }
+                command.ExecuteNonQuery();
             }
-            
         }
-
         private void es_1_Click(object sender, RoutedEventArgs e)
         {
-            es_1.Foreground = Brushes.Yellow;
-            es_2.Foreground = Brushes.Black;
-            es_3.Foreground = Brushes.Black;
 
-        }
+            var botao = sender as Button;
 
-        private void es_2_Click(object sender, RoutedEventArgs e)
-        {
-            es_1.Foreground = Brushes.Yellow;
-            es_2.Foreground = Brushes.Yellow;
-            es_3.Foreground = Brushes.Black;
-        }
+            string tag = botao.Tag.ToString();
+            SetEstrela("setimo", int.Parse(tag));
 
-        private void es_3_Click(object sender, RoutedEventArgs e)
-        {
-            es_1.Foreground = Brushes.Yellow;
-            es_2.Foreground = Brushes.Yellow;
-            es_3.Foreground = Brushes.Yellow;
-        }
+            switch (tag)
+            {
+                default:
+                    es_1.Foreground = Brushes.Black;
+                    es_2.Foreground = Brushes.Black;
+                    es_3.Foreground = Brushes.Black;
+                    break;
 
-        private void ea_2_Click(object sender, RoutedEventArgs e)
-        {
-            es_1.Foreground = Brushes.Yellow;
-            ea_2.Foreground = Brushes.Yellow;
-            ea_3.Foreground = Brushes.Black;
+                case "1":
+                    es_1.Foreground = Brushes.Yellow;
+                    es_2.Foreground = Brushes.Black;
+                    es_3.Foreground = Brushes.Black;
+                    break;
+
+                case "2":
+                    es_1.Foreground = Brushes.Yellow;
+                    es_2.Foreground = Brushes.Yellow;
+                    es_3.Foreground = Brushes.Black;
+                    break;
+                case "3":
+                    es_1.Foreground = Brushes.Yellow;
+                    es_2.Foreground = Brushes.Yellow;
+                    es_3.Foreground = Brushes.Yellow;
+                    break;
+
+            }
+
         }
 
         private void ea_1_Click(object sender, RoutedEventArgs e)
         {
-            ea_1.Foreground = Brushes.Yellow;
-            ea_2.Foreground = Brushes.Black;
-            ea_3.Foreground = Brushes.Black;
-        }
+            var botao = sender as Button;
 
-        private void ea_3_Click(object sender, RoutedEventArgs e)
-        {
-            ea_1.Foreground = Brushes.Yellow;
-            ea_2.Foreground = Brushes.Yellow;
-            ea_3.Foreground = Brushes.Yellow;
+            string tag = botao.Tag.ToString();
+            SetEstrela("Alien", int.Parse(tag));
+
+            switch (tag)
+            {
+                default:
+                    ea_1.Foreground = Brushes.Black;
+                    ea_2.Foreground = Brushes.Black;
+                    ea_3.Foreground = Brushes.Black;
+                    break;
+
+                case "1":
+                    ea_1.Foreground = Brushes.Yellow;
+                    ea_2.Foreground = Brushes.Black;
+                    ea_3.Foreground = Brushes.Black;
+                    break;
+
+                case "2":
+                    ea_1.Foreground = Brushes.Yellow;
+                    ea_2.Foreground = Brushes.Yellow;
+                    ea_3.Foreground = Brushes.Black;
+                    break;
+                case "3":
+                    ea_1.Foreground = Brushes.Yellow;
+                    ea_2.Foreground = Brushes.Yellow;
+                    ea_3.Foreground = Brushes.Yellow;
+                    break;
+
+            }
         }
 
         private void ej_1_Click(object sender, RoutedEventArgs e)
         {
-            ej_1.Foreground = Brushes.Yellow;
-            ej_2.Foreground = Brushes.Black;
-            ej_3.Foreground = Brushes.Black;
+            var botao = sender as Button;
+
+            string tag = botao.Tag.ToString();
+            SetEstrela("Jaw", int.Parse(tag));
+
+            switch (tag)
+            {
+                default:
+                    ej_1.Foreground = Brushes.Black;
+                    ej_2.Foreground = Brushes.Black;
+                    ej_3.Foreground = Brushes.Black;
+                    break;
+
+                case "1":
+                    ej_1.Foreground = Brushes.Yellow;
+                    ej_2.Foreground = Brushes.Black;
+                    ej_3.Foreground = Brushes.Black;
+                    break;
+
+                case "2":
+                    ej_1.Foreground = Brushes.Yellow;
+                    ej_2.Foreground = Brushes.Yellow;
+                    ej_3.Foreground = Brushes.Black;
+                    break;
+                case "3":
+                    ej_1.Foreground = Brushes.Yellow;
+                    ej_2.Foreground = Brushes.Yellow;
+                    ej_3.Foreground = Brushes.Yellow;
+                    break;
+
+            }
         }
 
-        private void ej_2_Click(object sender, RoutedEventArgs e)
-        {
-            ej_1.Foreground = Brushes.Yellow;
-            ej_2.Foreground = Brushes.Yellow;
-            ej_3.Foreground = Brushes.Black;
-        }
-
-        private void ej_3_Click(object sender, RoutedEventArgs e)
-        {
-            ej_1.Foreground = Brushes.Yellow;
-            ej_2.Foreground = Brushes.Yellow;
-            ej_3.Foreground = Brushes.Yellow;
-        }
-
-        private void ev_3_Click(object sender, RoutedEventArgs e)
-        {
-            ev_1.Foreground = Brushes.Yellow;
-            ev_2.Foreground = Brushes.Yellow;
-            ev_3.Foreground = Brushes.Yellow;
-        }
-
-        private void ev_2_Click(object sender, RoutedEventArgs e)
-        {
-            ev_1.Foreground = Brushes.Yellow;
-            ev_2.Foreground = Brushes.Yellow;
-            ev_3.Foreground = Brushes.Black;
-        }
 
         private void ev_1_Click(object sender, RoutedEventArgs e)
         {
-            ev_1.Foreground = Brushes.Yellow;
-            ev_2.Foreground = Brushes.Black;
-            ev_3.Foreground = Brushes.Black;
+            var botao = sender as Button;
+
+            string tag = botao.Tag.ToString();
+            SetEstrela("Vagabond", int.Parse(tag));
+
+            switch (tag)
+            {
+                default:
+                    ev_1.Foreground = Brushes.Black;
+                    ev_2.Foreground = Brushes.Black;
+                    ev_3.Foreground = Brushes.Black;
+                    break;
+
+                case "1":
+                    ev_1.Foreground = Brushes.Yellow;
+                    ev_2.Foreground = Brushes.Black;
+                    ev_3.Foreground = Brushes.Black;
+                    break;
+
+                case "2":
+                    ev_1.Foreground = Brushes.Yellow;
+                    ev_2.Foreground = Brushes.Yellow;
+                    ev_3.Foreground = Brushes.Black;
+                    break;
+                case "3":
+                    ev_1.Foreground = Brushes.Yellow;
+                    ev_2.Foreground = Brushes.Yellow;
+                    ev_3.Foreground = Brushes.Yellow;
+                    break;
+
+            }
         }
 
         private void ec_1_Click(object sender, RoutedEventArgs e)
         {
-            ec_1.Foreground = Brushes.Yellow;
-            ec_2.Foreground = Brushes.Black;
-            ec_3.Foreground = Brushes.Black;
+            var botao = sender as Button;
+
+            string tag = botao.Tag.ToString();
+            SetEstrela("Cure", int.Parse(tag));
+
+            switch (tag)
+            {
+                default:
+                    ec_1.Foreground = Brushes.Black;
+                    ec_2.Foreground = Brushes.Black;
+                    ec_3.Foreground = Brushes.Black;
+                    break;
+
+                case "1":
+                    ec_1.Foreground = Brushes.Yellow;
+                    ec_2.Foreground = Brushes.Black;
+                    ec_3.Foreground = Brushes.Black;
+                    break;
+
+                case "2":
+                    ec_1.Foreground = Brushes.Yellow;
+                    ec_2.Foreground = Brushes.Yellow;
+                    ec_3.Foreground = Brushes.Black;
+                    break;
+                case "3":
+                    ec_1.Foreground = Brushes.Yellow;
+                    ec_2.Foreground = Brushes.Yellow;
+                    ec_3.Foreground = Brushes.Yellow;
+                    break;
+
+            }
         }
 
-        private void ec_2_Click(object sender, RoutedEventArgs e)
-        {
-            ec_1.Foreground = Brushes.Yellow;
-            ec_2.Foreground = Brushes.Yellow;
-            ec_3.Foreground = Brushes.Black;
-        }
-
-        private void ec_3_Click(object sender, RoutedEventArgs e)
-        {
-            ec_1.Foreground = Brushes.Yellow;
-            ec_2.Foreground = Brushes.Yellow;
-            ec_3.Foreground = Brushes.Yellow;
-
-        }
     }
 }

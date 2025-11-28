@@ -35,15 +35,16 @@
 
 #insert into filmes (Nome,Favoritos,imagem) value ("Setimo Selo","2", LOAD_FILE('C:\Users\PEDROAUGUSTOPEDROSOT\Documents\Projeto Integrador\Anarco-Cinema-Desk\Anarco-Cinema-Desk\img\poster'));
 
-create table curtida(
-Setimo int auto_increment,
-Alien int auto_increment,
-Jaw int auto_increment,
-Vagabond int auto_increment,
-Cure int auto_increment,
-Meia int auto_increment,
-Futuro int auto_increment,
-Blade int auto_increment,
-Rio int auto_increment,
-Acossado int auto_increment
-);
+
+
+#create table estrela(
+#Nome varchar(70),
+#estrelas int
+#);
+#select * from estrela
+
+select * from estrela
+
+#alter table estrela add Filme varchar(70)
+#UPDATE estrela SET estrelas = 1 WHERE nome = 'g'
+UPDATE estrela SET estrelas = 2, Filme = "Setimo" WHERE nome = 'g'";
