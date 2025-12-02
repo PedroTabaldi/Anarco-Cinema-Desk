@@ -93,6 +93,10 @@ namespace Anarco_Cinema_Desk
             }
         }
 
+        public static string UsuarioLogado;
+
+        
+
         private void bt_cadastrar_Click(object sender, RoutedEventArgs e)
         {
             // Navega para a página de cadastro sem verificar email ou senha

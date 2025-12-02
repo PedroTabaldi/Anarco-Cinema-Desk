@@ -9,6 +9,7 @@ namespace Anarco_Cinema_Desk
     /// </summary>
     public partial class App : Application
     {
+        public string UsuarioLogado;
     }
 
 }

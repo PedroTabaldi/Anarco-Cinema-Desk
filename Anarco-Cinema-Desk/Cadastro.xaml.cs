@@ -90,5 +90,10 @@ namespace Anarco_Cinema_Desk
                 MessageBox.Show("Erro ao cadastrar: " + ex.Message);
             }
         }
+
+        private void cx_nome_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
