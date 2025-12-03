@@ -38,51 +38,63 @@ namespace Anarco_Cinema_Desk
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(cx_nome.Text) || string.IsNullOrEmpty(cx_email_re.Text) || string.IsNullOrEmpty(cx_senha_re.Password))
+            {
+                MessageBox.Show("Por favor, insira os dados");
+                return;
+            }
+
             // Supondo que cx_email_re e cx_senha_re são TextBox no XAML
             string email = cx_email_re.Text;
-            string senha = cx_senha_re.Text;
+            string senha = cx_senha_re.Password;
             string nome = cx_nome.Text;
 
             // Exemplo simples de inserção no banco de dados usando MySql.Data
             // Ajuste a string de conexão conforme necessário
-            string query = "INSERT INTO usuarios (Email, Senha) VALUES (@Email, @Senha)";
-            string nomes = $"SELECT * FROM estrela";
-
+            string nomes = $"SELECT Nome FROM estrela";
+            var nomeExiste = false;
             try
             {
                 MySqlCommand cmd = new MySqlCommand(nomes, ConecxaoBanco.Conecxao);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())
+                while (reader.Read())
                 {
-                    string nomeExistente = reader.GetString("Nome");
-
-                    if (nomeExistente == nome)
+                    if (reader.GetString("Nome") == nome)
                     {
-                        MessageBox.Show("Nome já cadastrado: " + nomeExistente);
-                        reader.Close();
+                        nomeExiste = true;
                     }
-                    else
-                    {
-                        reader.Close();
-                        string querynome = "INSERT INTO estrela (Nome) VALUES (@Nome)";
-                        using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
-                        {
-                            command.Parameters.AddWithValue("@Nome", nome);
-                            command.ExecuteNonQuery();
-                        }
-
-                        using (var command = new MySqlCommand(query, ConecxaoBanco.Conecxao))
-                        {
-                            command.Parameters.AddWithValue("@Email", email);
-                            command.Parameters.AddWithValue("@Senha", senha);
-                            command.ExecuteNonQuery();
-                        }
-                        MessageBox.Show("E-mail e senha cadastrados com sucesso!");
-                        NavigationService.Navigate(new Login());
-                    }
-
+                    //string nomeExistente = reader.GetString("Nome");
                 }
+                var tetse = "";
+                reader.Close();
+                if (nomeExiste)
+                {
+                    MessageBox.Show("Nome já cadastrado: " + nome);
+                }
+                else
+                {
+                    string querynome = "INSERT INTO estrela (Nome) VALUES (@Nome)";
+                    using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
+                    {
+                        command.Parameters.AddWithValue("@Nome", nome);
+                        command.ExecuteNonQuery();
+                    }
+
+                    string query = "INSERT INTO usuarios (Email, Senha, Nome) VALUES (@Email, @Senha, @Nome)";
+                    using (var command = new MySqlCommand(query, ConecxaoBanco.Conecxao))
+                    {
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Senha", senha);
+                        command.Parameters.AddWithValue("@Nome", nome);
+                        command.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("E-mail e senha cadastrados com sucesso!");
+                    NavigationService.Navigate(new Login());
+                }
+
+
+                reader.Close();
 
             }
             catch (Exception ex)

@@ -116,7 +116,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Button x:Name="bt_jaw" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Center" Height="300" Margin="0,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_jaw" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Center" Height="300" Margin="0,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_jaw_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/jaw.jpg"/>
             </Button.Background>
@@ -284,7 +284,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_alien" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="400,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_alien" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="400,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_alien_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/alien.jpg"/>
             </Button.Background>
@@ -380,7 +380,7 @@
                 </Button.Triggers>
             </Button>
 
-            <Button x:Name="es_3" Content="★" HorizontalAlignment="Left" Height="68" Margin="682,344,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_1_Click" BorderBrush="{x:Null}" Background="{x:Null}" >
+            <Button x:Name="es_3" Tag="3" Content="★" HorizontalAlignment="Left" Height="68" Margin="682,344,0,0" VerticalAlignment="Top" Width="58"  FontSize="54" Click="es_1_Click" BorderBrush="{x:Null}" Background="{x:Null}" >
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="ButtonBase.Click">
                         <BeginStoryboard>
@@ -941,7 +941,7 @@
 
         </Grid>
 
-        <Grid x:Name="gr_acossado" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95">
+        <Grid x:Name="gr_acossado" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
             <Grid.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFCACACA"/>

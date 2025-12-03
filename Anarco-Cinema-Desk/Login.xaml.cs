@@ -39,11 +39,6 @@ namespace Anarco_Cinema_Desk
 
         private void bt_logar_Click(object sender, RoutedEventArgs e)
         {
-            // Plano:
-            // 1. Obter o texto do campo de email (TextBox).
-            // 2. Conectar ao banco MySQL.
-            // 3. Executar uma query para verificar se o email existe na tabela de usuários.
-            // 4. Exibir mensagem de sucesso ou erro.
 
             string email = cx_email.Text.Trim(); // Supondo que o TextBox de email se chama txtEmail
             string connectionString = "Server=localhost;Database=login;Uid=root;Pwd=root;";
@@ -84,7 +79,22 @@ namespace Anarco_Cinema_Desk
 
             if (emailExiste && senhaExiste)
             {
-                
+                string nome = UsuarioLogado;
+                using (var connection = new MySqlConnection(connectionString2))
+                {
+                    connection.Open();
+                    string query = "SELECT Nome FROM usuarios WHERE Nome = @Nome";
+                    using (var cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", nome);
+                        var result = cmd.ExecuteScalar();
+                        if (result != null && Convert.ToInt32(result) > 0)
+                        {
+                            senhaExiste = true;
+                        }
+                    }
+                }
+
                 NavigationService.Navigate(new Catalogo());
             }
             else

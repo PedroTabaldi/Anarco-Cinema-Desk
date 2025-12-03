@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -18,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Anarco_Cinema_Desk
 {
@@ -55,164 +57,98 @@ namespace Anarco_Cinema_Desk
             NavigationService.Navigate(new Logar());
         }
 
-        private void bt_img2_Click(object sender, RoutedEventArgs e)
-        {
-
-
-        }
-
         private void bt_setimo_Click(object sender, RoutedEventArgs e)
         {
-
+            CarregarEstrelas("setimo");
         }
 
-        private void SetEstrela(string name, int pontos)
+        private void CarregarEstrelas(string nameFilme)
         {
-            string query = "INSERT INTO usuarios (Email, Senha) VALUES (@Email, @Senha)";
-            string nomes = $"SELECT * FROM estrela";
+            var userLogado = ((App)Application.Current).UsuarioLogado;
+            string nomes = $"SELECT estrelas FROM estrela WHERE Nome = '{userLogado}' AND Filme = '{nameFilme}'";
 
             try
             {
                 MySqlCommand cmd = new MySqlCommand(nomes, ConecxaoBanco.Conecxao);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                var existenome = false;
-                var existefilme = false;
-
-                while (reader.Read()) // lê linha por linha
+                if (reader.Read()) // lê linha por linha
                 {
-                    string nomeUser = reader["Nome"].ToString();
-
-
-                    string nomeExistente = reader.GetString("Nome");
-                    if (nomeUser  == ((App)Application.Current).UsuarioLogado && )
-                    { 
-                        existenome = true;
-                    }
-
-                    string filmeExistente = reader.GetString("Filme");
-                    if(filmeExistente == name)
+                    int estrelas = reader.GetInt32("estrelas");
+                    switch (nameFilme)
                     {
-                        existefilme = true;
+                        case "setimo":
+                            es_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            es_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            es_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                            // Adicione casos semelhantes para outros filmes, como "Alien", "Jaw", etc.
                     }
-
-
                 }
-
-                if (reader.Read())
-                {
-
-                    var val = reader["Nome"].ToString();
-
-
-
-                    //if (nomeExistente == name)
-                    //{
-                    //    MessageBox.Show("Nome já cadastrado: " + nomeExistente);
-                    //    reader.Close();
-                    //}
-                    //else
-                    //{
-                    //    //reader.Close();
-                    //    //string querynome = "INSERT INTO estrela (Nome) VALUES (@Nome)";
-                    //    //using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
-                    //    //{
-                    //    //    command.Parameters.AddWithValue("@Nome", nome);
-                    //    //    command.ExecuteNonQuery();
-                    //    //}
-
-                    //    //using (var command = new MySqlCommand(query, ConecxaoBanco.Conecxao))
-                    //    //{
-                    //    //    command.Parameters.AddWithValue("@Email", email);
-                    //    //    command.Parameters.AddWithValue("@Senha", senha);
-                    //    //    command.ExecuteNonQuery();
-                    //    //}
-                    //    //MessageBox.Show("E-mail e senha cadastrados com sucesso!");
-                    //    //NavigationService.Navigate(new Login());
-                    //}
-
-                }
+                reader.Close();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar: " + ex.Message);
             }
-            //string querynome = $"UPDATE estrela SET estrelas = {pontos}, Filme = '{name}' WHERE nome = 'g'";
-
-            //using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
-            //{
-            //    command.ExecuteNonQuery();
-            //}
         }
 
+        private void SetEstrela(string name, int pontos)
+        {
+            //string query = "INSERT INTO estrelas (Filme) VALUES (@Email, @Senha)";
 
 
+            var userLogado = ((App)Application.Current).UsuarioLogado;
+            string nomes = $"SELECT Filme FROM estrela WHERE Nome = '{userLogado}'";
 
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(nomes, ConecxaoBanco.Conecxao);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
+                var userExiste = false;
+                var filmeExiste = false;
 
+                while (reader.Read()) // lê linha por linha
+                {
+                    string nomeFilme = reader["Filme"].ToString();
 
+                    if (nomeFilme == name)
+                    {
+                        filmeExiste = true;
+                    }
+                }
+                reader.Close();
 
+                if (filmeExiste)
+                {
+                    string querynome = $"UPDATE estrela SET estrelas = {pontos} WHERE Nome = '{userLogado}'";
 
+                    using (var command = new MySqlCommand(querynome, ConecxaoBanco.Conecxao))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    string queryInsert = "INSERT INTO estrela (Nome, estrelas, Filme) VALUES (@Nome, @estrelas,@Filme)";
+                    using (var command = new MySqlCommand(queryInsert, ConecxaoBanco.Conecxao))
+                    {
+                        command.Parameters.AddWithValue("@Nome", ((App)Application.Current).UsuarioLogado);
+                        command.Parameters.AddWithValue("@estrelas", pontos);
+                        command.Parameters.AddWithValue("@Filme", name);
+                        command.ExecuteNonQuery();
+                    }
 
-
-        //private void SetEstrela(string filme, int estrelas)
-        //{
-        //    try
-        //    {
-        //        string usuario = Login.UsuarioLogado; // pega nome salvo no login
-
-        //        // 1. Verifica se já existe
-        //        string querySelect = "SELECT COUNT(*) FROM estrela WHERE Nome = @Nome AND Filme = @Filme";
-
-        //        using (var cmd = new MySqlCommand(querySelect, ConecxaoBanco.Conecxao))
-        //        {
-        //            cmd.Parameters.AddWithValue("@Nome", usuario);
-        //            cmd.Parameters.AddWithValue("@Filme", filme);
-
-        //            int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-        //            if (count > 0)
-        //            {
-        //                // 2. UPDATE
-        //                string queryUpdate =
-        //                    "UPDATE estrela SET Estrelas = @Estrelas WHERE Nome = @Nome AND Filme = @Filme";
-
-        //                using (var updateCmd = new MySqlCommand(queryUpdate, ConecxaoBanco.Conecxao))
-        //                {
-        //                    updateCmd.Parameters.AddWithValue("@Estrelas", estrelas);
-        //                    updateCmd.Parameters.AddWithValue("@Nome", usuario);
-        //                    updateCmd.Parameters.AddWithValue("@Filme", filme);
-
-        //                    updateCmd.ExecuteNonQuery();
-        //                }
-
-        //                MessageBox.Show($"Avaliação atualizada! {filme} agora tem {estrelas} estrela(s).");
-        //            }
-        //            else
-        //            {
-        //                // 3. INSERT
-        //                string queryInsert =
-        //                    "INSERT INTO estrela (Nome, Filme, Estrelas) VALUES (@Nome, @Filme, @Estrelas)";
-
-        //                using (var insertCmd = new MySqlCommand(queryInsert, ConecxaoBanco.Conecxao))
-        //                {
-        //                    insertCmd.Parameters.AddWithValue("@Nome", usuario);
-        //                    insertCmd.Parameters.AddWithValue("@Filme", filme);
-        //                    insertCmd.Parameters.AddWithValue("@Estrelas", estrelas);
-
-        //                    insertCmd.ExecuteNonQuery();
-        //                }
-
-        //                MessageBox.Show($"Avaliação registrada! {filme} recebeu {estrelas} estrela(s).");
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Erro ao salvar avaliação: " + ex.Message);
-        //    }
-        //}
+                    MessageBox.Show("cadastrados com sucesso!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex.Message);
+            }
+        }
 
 
         private void es_1_Click(object sender, RoutedEventArgs e)
@@ -567,5 +503,38 @@ namespace Anarco_Cinema_Desk
 
             }
         }
+
+        private void bt_alien_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Alien");
+        }
+
+        private void bt_jaw_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Jaw");
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
