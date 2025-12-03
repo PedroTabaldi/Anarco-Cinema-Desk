@@ -35,7 +35,7 @@ CREATE TABLE `estrela` (
 
 LOCK TABLES `estrela` WRITE;
 /*!40000 ALTER TABLE `estrela` DISABLE KEYS */;
-INSERT INTO `estrela` VALUES ('g',1,'Vagabond'),('c',NULL,NULL);
+INSERT INTO `estrela` VALUES ('k',NULL,NULL),(NULL,2,'setimo'),('u',2,NULL),('u',2,'setimo'),('u',2,'Jaw'),('u',2,'Alien'),('o',NULL,NULL),('o',2,'setimo'),('o',2,'Meia'),('o',2,'Rio'),('o',2,'Futuro'),('ShaoShao',NULL,NULL),('ShaoShao',3,'Vagabond'),('ShaoShao',2,'Blade'),('ShaoShao',3,'Rio'),('gabexx_bonitao',3,NULL),('gabexx_bonitao',3,'setimo'),('gabexx_bonitao',3,'Meia'),('gabexx_bonitao',3,'Alien'),('gabexx_bonitao',3,'Jaw'),('gabexx_bonitao',3,'Vagabond'),('gabexx_bonitao',2,'Futuro'),('gabexx_bonitao',3,'Blade'),('gabexx_bonitao',2,'Rio'),('gabexx_bonitao',1,'Acossado'),('o',3,'Vagabond'),('q',NULL,NULL),('q',2,'setimo'),('q',3,'Cure'),('q',1,'Vagabond'),('q',3,'Blade');
 /*!40000 ALTER TABLE `estrela` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-27 21:39:24
+-- Dump completed on 2025-12-03 20:05:54

@@ -82,7 +82,52 @@ namespace Anarco_Cinema_Desk
                             es_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
                             es_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
                             break;
-                            // Adicione casos semelhantes para outros filmes, como "Alien", "Jaw", etc.
+                         case "Alien":
+                            ea_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            ea_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            ea_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Jaw":
+                            ej_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            ej_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            ej_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Vagabond":
+                            ev_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            ev_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            ev_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Cure":
+                            ec_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            ec_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            ec_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Meia":
+                            em_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            em_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            em_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Futuro":
+                            ef_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            ef_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            ef_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Blade":
+                            eb_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            eb_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            eb_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Rio":
+                            er_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            er_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            er_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+                         case "Acossado":
+                            eg_1.Foreground = estrelas >= 1 ? Brushes.Yellow : Brushes.Black;
+                            eg_2.Foreground = estrelas >= 2 ? Brushes.Yellow : Brushes.Black;
+                            eg_3.Foreground = estrelas >= 3 ? Brushes.Yellow : Brushes.Black;
+                            break;
+
                     }
                 }
                 reader.Close();
@@ -513,6 +558,35 @@ namespace Anarco_Cinema_Desk
         {
             CarregarEstrelas("Jaw");
         }
+        private void bt_vagabond_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Vagabond");
+        }
+        private void bt_cure_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Cure");
+        }
+        private void bt_meia_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Meia");
+        }
+        private void bt_futuro_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Futuro");
+        }
+        private void bt_blade_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Blade");
+        }
+        private void bt_rio_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Rio");
+        }
+        private void bt_acossado_Click(object sender, RoutedEventArgs e)
+        {
+            CarregarEstrelas("Acossado");
+        }
+
     }
 }
 

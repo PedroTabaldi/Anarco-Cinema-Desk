@@ -33,7 +33,7 @@ namespace Anarco_Cinema_Desk
             string connectionString = "Server=localhost;Database=login;Uid=root;Pwd=root;";
             using (var connection = new MySqlConnection(connectionString))
             {
-                
+
             }
         }
 
@@ -43,50 +43,34 @@ namespace Anarco_Cinema_Desk
             string email = cx_email.Text.Trim(); // Supondo que o TextBox de email se chama txtEmail
             string connectionString = "Server=localhost;Database=login;Uid=root;Pwd=root;";
             bool emailExiste = false;
-
-            using (var connection = new MySqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                string query = "SELECT COUNT(*) FROM usuarios WHERE Email = @Email";
-                using (var cmd = new MySqlCommand(query, connection))
+
+                using (var connection = new MySqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    var result = cmd.ExecuteScalar();
-                    if (result != null && Convert.ToInt32(result) > 0)
+                    connection.Open();
+                    string query = "SELECT COUNT(*) FROM usuarios WHERE Email = @Email";
+                    using (var cmd = new MySqlCommand(query, connection))
                     {
-                        emailExiste = true;
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        var result = cmd.ExecuteScalar();
+                        if (result != null && Convert.ToInt32(result) > 0)
+                        {
+                            emailExiste = true;
+                        }
                     }
                 }
-            }
-            string senha = cx_senha.Text.Trim();
-            string connectionString2 = "Server=localhost;Database=login;Uid=root;Pwd=root;";
-            bool senhaExiste = false;
+                string senha = cx_senha.Text.Trim();
+                string connectionString2 = "Server=localhost;Database=login;Uid=root;Pwd=root;";
+                bool senhaExiste = false;
 
-            using (var connection = new MySqlConnection(connectionString2))
-            {
-                connection.Open();
-                string query = "SELECT COUNT(*) FROM usuarios WHERE Senha = @Senha";
-                using (var cmd = new MySqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@Senha", senha);
-                    var result = cmd.ExecuteScalar();
-                    if (result != null && Convert.ToInt32(result) > 0)
-                    {
-                        senhaExiste = true;
-                    }
-                }
-            }
-
-            if (emailExiste && senhaExiste)
-            {
-                string nome = UsuarioLogado;
                 using (var connection = new MySqlConnection(connectionString2))
                 {
                     connection.Open();
-                    string query = "SELECT Nome FROM usuarios WHERE Nome = @Nome";
+                    string query = "SELECT COUNT(*) FROM usuarios WHERE Senha = @Senha";
                     using (var cmd = new MySqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@Nome", nome);
+                        cmd.Parameters.AddWithValue("@Senha", senha);
                         var result = cmd.ExecuteScalar();
                         if (result != null && Convert.ToInt32(result) > 0)
                         {
@@ -95,17 +79,29 @@ namespace Anarco_Cinema_Desk
                     }
                 }
 
-                NavigationService.Navigate(new Catalogo());
+                if (emailExiste && senhaExiste)
+                {
+                    string queryuser = $"SELECT Nome FROM usuarios WHERE email = '{email}' AND senha = '{senha}'";
+
+                    MySqlCommand cmduser = new MySqlCommand(queryuser, ConecxaoBanco.Conecxao);
+                    MySqlDataReader reader = cmduser.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        ((App)Application.Current).UsuarioLogado = reader["Nome"].ToString();
+                    }
+                    reader.Close();
+
+                    NavigationService.Navigate(new Catalogo());
+                }
+                else
+                {
+                    MessageBox.Show("Email não encontrado.", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Email não encontrado.", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            catch { }
         }
 
-        public static string UsuarioLogado;
-
-        
 
         private void bt_cadastrar_Click(object sender, RoutedEventArgs e)
         {

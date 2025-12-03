@@ -137,7 +137,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_acossado" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1300,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_acossado" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1300,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_acossado_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/acossado.jpg"/>
             </Button.Background>
@@ -158,7 +158,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_rio" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1000,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_rio" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1000,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_rio_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/rio.jpg"/>
             </Button.Background>
@@ -179,7 +179,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_blade" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Center" Height="300" Margin="0,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_blade" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Center" Height="300" Margin="0,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_blade_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/blade.jpg"/>
             </Button.Background>
@@ -200,7 +200,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_futuro" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="400,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_futuro" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="400,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_futuro_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/futuro.jpg"/>
             </Button.Background>
@@ -221,7 +221,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_meia" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="100,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_meia" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="100,528,0,0" VerticalAlignment="Top" Width="200" Click="bt_meia_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/meia.jpg"/>
             </Button.Background>
@@ -242,7 +242,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_cure" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1300,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_cure" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1300,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_cure_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/cure.jpg"/>
             </Button.Background>
@@ -250,7 +250,7 @@
                 <EventTrigger RoutedEvent="ButtonBase.Click">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_vagabond" Storyboard.TargetProperty="Visibility">
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="gr_cure" Storyboard.TargetProperty="Visibility">
                                 <DiscreteObjectKeyFrame KeyTime="0:0:0">
                                     <DiscreteObjectKeyFrame.Value>
                                         <Visibility>Visible</Visibility>
@@ -263,7 +263,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="bt_vagabond" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1000,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_setimo_Click">
+        <Button x:Name="bt_vagabond" Style="{StaticResource BtHoverStyle}" Content="" HorizontalAlignment="Left" Height="300" Margin="1000,196,0,0" VerticalAlignment="Top" Width="200" Click="bt_vagabond_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/vagabond.jpg"/>
             </Button.Background>
@@ -559,7 +559,7 @@
                 </Button.Triggers>
             </Button>
         </Grid>
-        <Grid x:Name="gr_cure" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
+        <Grid x:Name="gr_cure" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95">
             <Grid.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFCACACA"/>

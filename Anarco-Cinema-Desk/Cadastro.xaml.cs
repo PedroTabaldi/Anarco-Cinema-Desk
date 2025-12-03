@@ -60,13 +60,13 @@ namespace Anarco_Cinema_Desk
 
                 while (reader.Read())
                 {
-                    if (reader.GetString("Nome") == nome)
+                    if (reader["Nome"].ToString() == nome)
                     {
                         nomeExiste = true;
                     }
                     //string nomeExistente = reader.GetString("Nome");
                 }
-                var tetse = "";
+
                 reader.Close();
                 if (nomeExiste)
                 {

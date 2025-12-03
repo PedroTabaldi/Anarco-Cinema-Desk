@@ -24,7 +24,8 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `Email` varchar(100) DEFAULT NULL,
-  `Senha` varchar(100) DEFAULT NULL
+  `Senha` varchar(100) DEFAULT NULL,
+  `Nome` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -34,7 +35,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES ('pedro@gmail.com','root'),('au@gmail.ocm','ada'),('lucianovmuhlen@gmail.com','123456'),('',''),('au@12','12'),('oa@3','123'),('',''),('',''),('12','12'),('',''),('henriquemartini550@gmail.com','123456789'),('',''),('',''),('lucas@gmail.com','Lucas@0771'),('',''),('g','g'),('c','c');
+INSERT INTO `usuarios` VALUES ('l','123',NULL),('l','123',NULL),('k','k','k'),('u','u','u'),('o','o','o'),('henriquemartini550@gmail.com','123','ShaoShao'),('gagabd@gmail.com','12122007','gabexx_bonitao'),('q','q','q');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-27 21:39:24
+-- Dump completed on 2025-12-03 20:05:54
