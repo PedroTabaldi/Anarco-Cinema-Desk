@@ -6,6 +6,8 @@
       xmlns:local="clr-namespace:Anarco_Cinema_Desk"
       mc:Ignorable="d" 
       d:DesignHeight="900" d:DesignWidth="1600"
+      MaxHeight="900" MaxWidth="1600"
+      MinHeight="900" MinWidth="1600"
       Title="Cadastro">
 
     <Grid Background="White">

@@ -6,6 +6,8 @@
       xmlns:local="clr-namespace:Anarco_Cinema_Desk"
       mc:Ignorable="d" 
       d:DesignHeight="900" d:DesignWidth="1600"
+      MaxHeight="900" MaxWidth="1600"
+      MinHeight="900" MinWidth="1600"
       Title="Catalogo">
 
     <!-- Plano (pseudocódigo): 
@@ -559,7 +561,7 @@
                 </Button.Triggers>
             </Button>
         </Grid>
-        <Grid x:Name="gr_cure" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95">
+        <Grid x:Name="gr_cure" HorizontalAlignment="Center" Height="552" Margin="0,110,0,0" VerticalAlignment="Top" Width="1240" ScrollViewer.VerticalScrollBarVisibility="Hidden" Opacity="0.95" Visibility="Hidden">
             <Grid.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFCACACA"/>
