@@ -1,37 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\",
+  "WorkspaceRootPath": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\catalogo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\catalogo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\catalogo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\catalogo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\cadastro.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\cadastro.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\cadastro.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\logar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\catalogo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\catalogo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\catalogo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\catalogo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\logar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\logar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\cadastro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\cadastro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\cadastro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\logar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\logar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\logar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|c:\\users\\pedroaugustopedrosot\\documents\\projeto integrador\\anarco-cinema-desk\\anarco-cinema-desk\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|d:\\arquivos gerais\\projetos\\anarco\\anarco-cinema-desk\\anarco-cinema-desk\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8A08B8AF-D08F-4F84-97EC-6D96826024FA}|Anarco-Cinema-Desk\\Anarco-Cinema-Desk.csproj|solutionrelative:anarco-cinema-desk\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -42,79 +42,74 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Login.xaml",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Login.xaml",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Login.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-12T23:18:32.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T23:18:32.932Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Logar.xaml",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Logar.xaml",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Logar.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-12T23:18:26.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T23:18:26.521Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Cadastro.xaml",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Cadastro.xaml",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Cadastro.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-12T23:18:01.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T23:18:01.066Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Login.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml.cs",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml.cs",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Login.xaml.cs",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml.cs",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Login.xaml.cs",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Login.xaml.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAswFoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T23:49:00.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T23:49:00.609Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Logar.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml.cs",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml.cs",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Logar.xaml.cs",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml.cs",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Logar.xaml.cs",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Logar.xaml.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T23:48:51.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T23:48:51.871Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Cadastro.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml.cs",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml.cs",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Cadastro.xaml.cs",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml.cs",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Cadastro.xaml.cs",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Cadastro.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAwFcAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-03T22:25:11.78Z",
               "EditorCaption": ""
@@ -123,9 +118,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Catalogo.xaml",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Catalogo.xaml",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Catalogo.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-12-03T22:22:33.926Z",
@@ -133,13 +128,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Catalogo.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml.cs",
+              "DocumentMoniker": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml.cs",
               "RelativeDocumentMoniker": "Anarco-Cinema-Desk\\Catalogo.xaml.cs",
-              "ToolTip": "C:\\Users\\PEDROAUGUSTOPEDROSOT\\Documents\\Projeto Integrador\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml.cs",
+              "ToolTip": "D:\\Arquivos gerais\\Projetos\\Anarco\\Anarco-Cinema-Desk\\Anarco-Cinema-Desk\\Catalogo.xaml.cs",
               "RelativeToolTip": "Anarco-Cinema-Desk\\Catalogo.xaml.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAqwGMAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswGMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-29T22:41:55.199Z",
               "EditorCaption": ""

@@ -52,7 +52,15 @@ namespace Anarco_Cinema_Desk
             // Exemplo simples de inserção no banco de dados usando MySql.Data
             // Ajuste a string de conexão conforme necessário
             string nomes = $"SELECT Nome FROM estrela";
+            string emails = $"SELECT Email FROM usuarios";
             var nomeExiste = false;
+            bool emailExiste = false;
+            string queryCheckEmail = "SELECT COUNT(*) FROM usuarios WHERE Email = @Email";
+            using (var cmd = new MySqlCommand(queryCheckEmail, ConecxaoBanco.Conecxao))
+            {
+                cmd.Parameters.AddWithValue("@Email", email);
+                emailExiste = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
             try
             {
                 MySqlCommand cmd = new MySqlCommand(nomes, ConecxaoBanco.Conecxao);
@@ -63,14 +71,21 @@ namespace Anarco_Cinema_Desk
                     if (reader["Nome"].ToString() == nome)
                     {
                         nomeExiste = true;
+                        
                     }
+                    
                     //string nomeExistente = reader.GetString("Nome");
                 }
+                
 
                 reader.Close();
                 if (nomeExiste)
                 {
                     MessageBox.Show("Nome já cadastrado: " + nome);
+                }
+                if (emailExiste) 
+                {
+                    MessageBox.Show("Email já cadastrado " + email);
                 }
                 else
                 {
@@ -93,8 +108,8 @@ namespace Anarco_Cinema_Desk
                     NavigationService.Navigate(new Login());
                 }
 
-
                 reader.Close();
+
 
             }
             catch (Exception ex)
